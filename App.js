@@ -1,11 +1,11 @@
 import React from 'react';
-import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
-import { StatusBar } from 'expo-status-bar';
+import { View, Text, StyleSheet, TouchableOpacity, StatusBar } from 'react-native';
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <View style={styles.menuBar}>
+      <StatusBar style="auto" />
+      <View style={[styles.menuBar, { marginTop: 0 }]}>
         <TouchableOpacity style={styles.menuItem}>
           <Text>Home</Text>
         </TouchableOpacity>
@@ -19,7 +19,6 @@ export default function App() {
       <View style={styles.content}>
         <Text>Open up App.js to start working on your app!</Text>
       </View>
-      <StatusBar style="auto" />
     </View>
   );
 }
