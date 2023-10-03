@@ -1,5 +1,6 @@
 import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, StatusBar, Button } from 'react-native';
+import { Calendar, CalendarList, Agenda } from 'react-native-calendars';
 
 export default function App() {
   return (
@@ -17,13 +18,21 @@ export default function App() {
         </TouchableOpacity>
       </View>
 
-      <View style={styles.content}>
+      <View style={styles.texto}>
         <Text style={{ color: 'black', marginTop: 30, fontSize: 20, color: '#4682b4' }}>ULTIMOS REGISTROS DO MÊS</Text>
       </View>
 
       <View style={styles.botoes}>
         <Button title='mes'></Button>
         <Button title='ano' ></Button>
+      </View>
+
+      <View>
+        <Calendar style={styles.Calendar} />
+      </View>
+
+      <View style={styles.anuncio}>
+        <Text style={{ color: 'black', marginTop: 30, fontSize: 20, backgroundColor: 'yellow' }}>ANUNCIO</Text>
       </View>
 
       <Button title='Poupar' color={'green'} ></Button>
@@ -49,18 +58,26 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  content: {
-    flex: 1,
+  texto: {
+    flex: 0.5,
     alignItems: 'center',
     justifyContent: 'flex-start',
     backgroundColor: 'white',
   },
   botoes: {
-    flex: 8,
+    flex: 0.5,
     alignItems: 'flex-start',
     justifyContent: 'space-around',
     flexDirection: 'row',
     marginTop: 10,
-    backgroundColor: 'white'
+    backgroundColor: 'white',
   },
+  Calendar: {
+    borderWidth: 1,
+    borderColor: '#dda0dd'
+  },
+  anuncio: {
+    flex: 2,
+  }
 });
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
