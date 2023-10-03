@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, StatusBar, Image } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity, StatusBar, Button, Image } from 'react-native';
 
 export default function App() {
   return (
@@ -7,18 +7,23 @@ export default function App() {
       <StatusBar style="auto" />
       <View style={[styles.menuBar, { marginTop: 0 }]}>
         <TouchableOpacity style={styles.menuItem}>
-          <Text style={{ color: 'white' }}>Home</Text>
+          <Text style={{ color: 'white', fontSize: 20 }}>Home</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.menuItem}>
-          <Text style={{ color: 'white' }}>Ajuda</Text>
+          <Text style={{ color: 'white', fontSize: 20 }}>Ajuda</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.menuItem}>
-          <Text style={{ color: 'white' }}>Contato</Text>
+          <Text style={{ color: 'white', fontSize: 20 }}>Contato</Text>
         </TouchableOpacity>
       </View>
       <View style={styles.content}>
-        <Text style={{ color: 'white', marginTop: 40, fontSize: 20 }}>Gerencie suas finanças com eficiência e acompanhe suas despesas diárias de forma inteligente.</Text>
+        <Text style={{ color: 'black', marginTop: 40, fontSize: 20 }}>Gerencie suas finanças com eficiência e acompanhe suas despesas diárias de forma inteligente.</Text>
       </View>
+      <Image
+        source={{ uri: 'https://super.abril.com.br/wp-content/uploads/2017/02/porco-cofre.png?w=1024&h=682&crop=1' }}
+        style={styles.backgroundImage}
+      />
+      <Button title='Poupar' color={'green'}></Button>
     </View>
   );
 }
@@ -33,7 +38,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-around',
     alignItems: 'center',
     backgroundColor: '#87cefa',
-    height: 50,
+    height: 70,
   },
   menuItem: {
     flex: 1,
@@ -44,6 +49,10 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'flex-start',
-    backgroundColor: '#ccc',
+    backgroundColor: '#fff',
+  },
+  backgroundImage: {
+    flex: 1,
+    resizeMode: 'cover',
   },
 });
