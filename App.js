@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, StatusBar } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity, StatusBar, Image } from 'react-native';
 
 export default function App() {
   return (
@@ -17,7 +17,7 @@ export default function App() {
         </TouchableOpacity>
       </View>
       <View style={styles.content}>
-        <Text>Open up App.js to start working on your app!</Text>
+        <Text style={{ color: 'white', marginTop: 40, fontSize: 20 }}>Gerencie suas finanças com eficiência e acompanhe suas despesas diárias de forma inteligente.</Text>
       </View>
     </View>
   );
@@ -26,7 +26,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#aaa',
   },
   menuBar: {
     flexDirection: 'row',
@@ -43,6 +43,7 @@ const styles = StyleSheet.create({
   content: {
     flex: 1,
     alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: 'flex-start',
+    backgroundColor: '#ccc',
   },
 });
