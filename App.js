@@ -7,13 +7,13 @@ export default function App() {
       <StatusBar style="auto" />
       <View style={[styles.menuBar, { marginTop: 0 }]}>
         <TouchableOpacity style={styles.menuItem}>
-          <Text>Home</Text>
+          <Text style={{ color: 'white' }}>Home</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.menuItem}>
-          <Text>Ajuda</Text>
+          <Text style={{ color: 'white' }}>Ajuda</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.menuItem}>
-          <Text>Contato</Text>
+          <Text style={{ color: 'white' }}>Contato</Text>
         </TouchableOpacity>
       </View>
       <View style={styles.content}>
@@ -32,7 +32,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-around',
     alignItems: 'center',
-    backgroundColor: '#ccc',
+    backgroundColor: '#87cefa',
     height: 50,
   },
   menuItem: {
