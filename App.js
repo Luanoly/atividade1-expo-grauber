@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, StatusBar, Button, Image } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity, StatusBar, Button } from 'react-native';
 
 export default function App() {
   return (
@@ -7,23 +7,27 @@ export default function App() {
       <StatusBar style="auto" />
       <View style={[styles.menuBar, { marginTop: 0 }]}>
         <TouchableOpacity style={styles.menuItem}>
-          <Text style={{ color: 'white', fontSize: 20 }}>Home</Text>
+          <Text style={{ color: 'white', fontSize: 18 }}>Home</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.menuItem}>
-          <Text style={{ color: 'white', fontSize: 20 }}>Ajuda</Text>
+          <Text style={{ color: 'white', fontSize: 24 }}>PoupCerto</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.menuItem}>
-          <Text style={{ color: 'white', fontSize: 20 }}>Contato</Text>
+          <Text style={{ color: 'white', fontSize: 18 }}>Contato</Text>
         </TouchableOpacity>
       </View>
+
       <View style={styles.content}>
-        <Text style={{ color: 'black', marginTop: 40, fontSize: 20 }}>Gerencie suas finanças com eficiência e acompanhe suas despesas diárias de forma inteligente.</Text>
+        <Text style={{ color: 'black', marginTop: 30, fontSize: 20, color: '#4682b4' }}>ULTIMOS REGISTROS DO MÊS</Text>
       </View>
-      <Image
-        source={{ uri: 'https://super.abril.com.br/wp-content/uploads/2017/02/porco-cofre.png?w=1024&h=682&crop=1' }}
-        style={styles.backgroundImage}
-      />
-      <Button title='Poupar' color={'green'}></Button>
+
+      <View style={styles.botoes}>
+        <Button title='mes'></Button>
+        <Button title='ano' ></Button>
+      </View>
+
+      <Button title='Poupar' color={'green'} ></Button>
+
     </View>
   );
 }
@@ -31,13 +35,13 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#aaa',
+    backgroundColor: 'white',
   },
   menuBar: {
     flexDirection: 'row',
     justifyContent: 'space-around',
     alignItems: 'center',
-    backgroundColor: '#87cefa',
+    backgroundColor: '#4682b4',
     height: 70,
   },
   menuItem: {
@@ -49,10 +53,14 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'flex-start',
-    backgroundColor: '#fff',
+    backgroundColor: 'white',
   },
-  backgroundImage: {
-    flex: 1,
-    resizeMode: 'cover',
+  botoes: {
+    flex: 8,
+    alignItems: 'flex-start',
+    justifyContent: 'space-around',
+    flexDirection: 'row',
+    marginTop: 10,
+    backgroundColor: 'white'
   },
 });
