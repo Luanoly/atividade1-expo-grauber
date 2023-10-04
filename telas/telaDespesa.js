@@ -23,7 +23,7 @@ const TelaDespesa = () => {
 
                 {/* Caixa de texto para inserir o valor */}
                 <TextInput
-                    placeholder="                   Insira o valor"
+                    placeholder="                      Insira o valor"
                     style={styles.input}
                     onChangeText={handleValorChange}
                     value={valor}
@@ -44,8 +44,16 @@ const TelaDespesa = () => {
 
             </View>
 
-            <View style={styles.historico}>
+            <View style={styles.historico1}>
                 <Text>Historico 1</Text>
+            </View>
+
+            <View style={styles.historico2}>
+                <Text>Historico 2</Text>
+            </View>
+
+            <View style={styles.historico3}>
+                <Text>Historico 3</Text>
             </View>
 
         </View>
@@ -82,12 +90,18 @@ const styles = StyleSheet.create({
     valorExibido: {
         fontSize: 18,
     },
-    historico: {
-        flex: 1.5,
-        backgroundColor: 'yellow',
-        justifyContent: 'flex-start',
-        alignItems: 'center'
+    historico1: {
+        flex: 0.5,
+        backgroundColor: '#f9a825',
     },
+    historico2: {
+        flex: 0.5,
+        backgroundColor: '#a9a825'
+    },
+    historico3: {
+        flex: 0.5,
+        backgroundColor: '#ffffa5'
+    }
 });
 
 export default TelaDespesa;
