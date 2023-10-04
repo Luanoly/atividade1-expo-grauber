@@ -19,25 +19,35 @@ const TelaDespesa = () => {
             </View>
 
             <View style={styles.content}>
-                <Text style={{ color: 'black', marginTop: 40, fontSize: 20 }}>Gerencie suas finanças com eficiência e acompanhe suas despesas diárias de forma inteligente.</Text>
+                <Text style={{ color: 'black', marginTop: 40, fontSize: 18, marginBottom: 20 }}>Gerencie suas finanças com eficiência e acompanhe suas despesas diárias de forma inteligente.</Text>
 
                 {/* Caixa de texto para inserir o valor */}
                 <TextInput
-                    placeholder="Insira o valor"
+                    placeholder="                   Insira o valor"
                     style={styles.input}
                     onChangeText={handleValorChange}
                     value={valor}
+                    color={'#569b4a'}
                 />
 
                 {/* Exibir o valor inserido */}
                 <Text style={styles.valorExibido}>Valor inserido: {valor}</Text>
 
-                {/* Botão para limpar o valor */}
+                <Button
+                    title="Confirmar"
+                    color={'#569b4a'}
+                />
                 <Button
                     title="Limpar"
                     onPress={() => setValor('')}
                 />
+
             </View>
+
+            <View style={styles.historico}>
+                <Text>Historico 1</Text>
+            </View>
+
         </View>
     );
 };
@@ -59,19 +69,24 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'flex-start',
         backgroundColor: '#fff',
-        padding: 20,
+        padding: 10,
     },
     input: {
-        width: '100%',
+        width: '60%',
         height: 40,
         borderWidth: 1,
         borderColor: '#ccc',
         borderRadius: 5,
-        padding: 10,
         marginBottom: 10,
     },
     valorExibido: {
         fontSize: 18,
+    },
+    historico: {
+        flex: 1.5,
+        backgroundColor: 'yellow',
+        justifyContent: 'flex-start',
+        alignItems: 'center'
     },
 });
 
