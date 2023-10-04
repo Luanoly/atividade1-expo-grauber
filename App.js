@@ -31,7 +31,7 @@ export default function App() {
       </View>
 
       <View style={styles.poupar}>
-        <Button title='Poupar' color={'green'} ></Button>
+        <Button title='Poupar' color={'#569b4a'} ></Button>
       </View>
 
     </View>
@@ -63,24 +63,24 @@ const styles = StyleSheet.create({
   registros: {
     flex: 0.5,
     alignItems: 'center',
-    backgroundColor: '#ffff00'
+    backgroundColor: '#fcfaa7'
   },
   registros2: {
     flex: 0.5,
     alignItems: 'center',
-    backgroundColor: 'blue'
+    backgroundColor: '#c9ce63'
   },
   registros3: {
     flex: 0.5,
     alignItems: 'center',
-    backgroundColor: 'red'
+    backgroundColor: '#98ad43'
   },
   poupar: {
     flex: 0.3,
     margin: 20,
     borderWidth: 1,
     borderColor: 'black',
-    backgroundColor: 'green',
+    backgroundColor: '#569b4a',
   }
 });
 
