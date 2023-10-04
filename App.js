@@ -20,8 +20,14 @@ export default function App() {
         <Calendar style={styles.Calendar} />
       </View>
 
-      <View style={styles.anuncio}>
-        <Text style={{ color: 'black', marginTop: 30, fontSize: 20 }}>ANUNCIO</Text>
+      <View style={styles.registros}>
+        <Text style={{ color: 'black', marginTop: 30, fontSize: 20 }}>Registro 1</Text>
+      </View>
+      <View style={styles.registros2}>
+        <Text style={{ color: 'black', marginTop: 30, fontSize: 20 }}>Registro 2</Text>
+      </View>
+      <View style={styles.registros3}>
+        <Text style={{ color: 'black', marginTop: 30, fontSize: 20 }}>Registro 3</Text>
       </View>
 
       <View style={styles.poupar}>
@@ -52,12 +58,22 @@ const styles = StyleSheet.create({
   },
   Calendar: {
     borderWidth: 1,
-    borderColor: '#dda0dd'
+    borderColor: '#4682b4'
   },
-  anuncio: {
-    flex: 2,
+  registros: {
+    flex: 0.5,
     alignItems: 'center',
-    backgroundColor: 'yellow'
+    backgroundColor: '#ffff00'
+  },
+  registros2: {
+    flex: 0.5,
+    alignItems: 'center',
+    backgroundColor: 'blue'
+  },
+  registros3: {
+    flex: 0.5,
+    alignItems: 'center',
+    backgroundColor: 'red'
   },
   poupar: {
     flex: 0.3,
