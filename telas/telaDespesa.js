@@ -6,26 +6,26 @@ const TelaDespesa = () => {
     const [isLoading, setLoading] = useState(true);
     const [despesas, setDespesas] = useState([]); // Estado para armazenar o valor inserido
 
-    // Função para atualizar o estado com o valor inserido
-    const handleValorChange = (text) => {
-        setDespesas(text);
+    // // Função para atualizar o estado com o valor inserido
+    // const handleValorChange = (text) => {
+    //     setDespesas(text);
 
-        const getDespesas = async () => {
-            try {
-                const response = await fetch('https://projeto-nestjs-financas.onrender.com/despesas');
-                const json = await response.json();
-                setDespesas(json.despesas);
-            } catch (error) {
-                console.error(error);
-            } finally {
-                setLoading(false);
-            }
-        };
+    const getDespesas = async () => {
+        try {
+            const response = await fetch('https://projeto-nestjs-financas.onrender.com/despesas');
+            const json = await response.json();
+            setDespesas(json);
+        } catch (error) {
+            console.error(error);
+        } finally {
+            setLoading(false);
+        }
     };
+    // };
 
-    // useEffect(() => {
-    //     getDespesas();
-    // }, []);
+    useEffect(() => {
+        getDespesas();
+    }, []);
 
     return (
         <View style={styles.container}>
@@ -47,14 +47,10 @@ const TelaDespesa = () => {
                 <TextInput
                     placeholder="                      Insira o valor"
                     style={styles.input}
-                    onChangeText={handleValorChange}
-                    value={despesas}
+                    // onChangeText={handleValorChange}
+                    // value={despesas}
                     color={'#569b4a'}
                 />
-
-                {/* Exibir o valor inserido */}
-                <Text style={styles.valorExibido}>Valor inserido: {despesas}</Text>
-
 
                 <View style={styles.botaoConfirmar}>
                     <Button
@@ -62,21 +58,15 @@ const TelaDespesa = () => {
                         color={'#569b4a'}
                     />
                 </View>
-                <View style={styles.botaoLimpar}>
-                    <Button
-                        title="Limpar"
-                        onPress={() => setDespesas('')}
-                    />
-                </View>
 
                 <View style={{ flex: 1, padding: 24 }}>
                     {isLoading ? (<ActivityIndicator />) : (
                         <FlatList
-                            data={despesa}
+                            data={despesas}
                             keyExtractor={({ id }) => id}
                             renderItem={({ item }) => (
                                 <Text>
-                                    {item.title}, {item.realeaseYear}
+                                    {item.categoria}, {item.valor}
                                 </Text>
                             )}
                         />
