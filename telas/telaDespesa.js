@@ -12,7 +12,7 @@ const TelaDespesa = () => {
 
         const getDespesas = async () => {
             try {
-                const response = await fetch('https://reactnative.dev/despesas.json');
+                const response = await fetch('https://projeto-nestjs-financas.onrender.com/despesas');
                 const json = await response.json();
                 setDespesas(json.despesas);
             } catch (error) {
