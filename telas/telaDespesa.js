@@ -6,10 +6,6 @@ const TelaDespesa = () => {
     const [isLoading, setLoading] = useState(true);
     const [despesas, setDespesas] = useState([]); // Estado para armazenar o valor inserido
 
-    // // Função para atualizar o estado com o valor inserido
-    // const handleValorChange = (text) => {
-    //     setDespesas(text);
-
     const getDespesas = async () => {
         try {
             const response = await fetch('https://projeto-nestjs-financas.onrender.com/despesas');
@@ -21,7 +17,6 @@ const TelaDespesa = () => {
             setLoading(false);
         }
     };
-    // };
 
     useEffect(() => {
         getDespesas();
@@ -47,8 +42,6 @@ const TelaDespesa = () => {
                 <TextInput
                     placeholder="                      Insira o valor"
                     style={styles.input}
-                    // onChangeText={handleValorChange}
-                    // value={despesas}
                     color={'#569b4a'}
                 />
 
@@ -104,27 +97,6 @@ const styles = StyleSheet.create({
         borderColor: '#ccc',
         borderRadius: 5,
         marginBottom: 10,
-    },
-    valorExibido: {
-        fontSize: 18,
-    },
-    botaoConfirmar: {
-        marginTop: 10
-    },
-    botaoLimpar: {
-        marginTop: 10
-    },
-    historico1: {
-        flex: 0.25,
-        backgroundColor: '#f9a825',
-    },
-    historico2: {
-        flex: 0.25,
-        backgroundColor: '#a9a825'
-    },
-    historico3: {
-        flex: 0.25,
-        backgroundColor: '#ffffa5'
     },
 });
 
