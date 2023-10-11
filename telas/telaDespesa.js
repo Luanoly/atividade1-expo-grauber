@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, StatusBar, TextInput, Button, FlatList } from 'react-native';
 import { ActivityIndicator } from 'react-native-paper';
 
@@ -21,8 +21,11 @@ const TelaDespesa = () => {
                 setLoading(false);
             }
         };
-
     };
+
+    // useEffect(() => {
+    //     getDespesas();
+    // }, []);
 
     return (
         <View style={styles.container}>
