@@ -1,12 +1,27 @@
 import React, { useState } from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, StatusBar, TextInput, Button } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity, StatusBar, TextInput, Button, FlatList } from 'react-native';
+import { ActivityIndicator } from 'react-native-paper';
 
 const TelaDespesa = () => {
-    const [valor, setValor] = useState(''); // Estado para armazenar o valor inserido
+    const [isLoading, setLoading] = useState(true);
+    const [despesas, setDespesas] = useState([]); // Estado para armazenar o valor inserido
 
     // Função para atualizar o estado com o valor inserido
     const handleValorChange = (text) => {
-        setValor(text);
+        setDespesas(text);
+
+        const getDespesas = async () => {
+            try {
+                const response = await fetch('https://reactnative.dev/despesas.json');
+                const json = await response.json();
+                setDespesas(json.despesas);
+            } catch (error) {
+                console.error(error);
+            } finally {
+                setLoading(false);
+            }
+        };
+
     };
 
     return (
@@ -19,43 +34,53 @@ const TelaDespesa = () => {
             </View>
 
             <View style={styles.content}>
-                <Text style={{ color: 'black', marginTop: 40, fontSize: 18, marginBottom: 20 }}>Gerencie suas finanças com eficiência e acompanhe suas despesas diárias de forma inteligente.</Text>
+
+                <View>
+                    <Text style={{ color: 'black', marginTop: 40, fontSize: 18, marginBottom: 20 }}>Categoria:</Text>
+
+                </View>
 
                 {/* Caixa de texto para inserir o valor */}
                 <TextInput
                     placeholder="                      Insira o valor"
                     style={styles.input}
                     onChangeText={handleValorChange}
-                    value={valor}
+                    value={despesas}
                     color={'#569b4a'}
                 />
 
                 {/* Exibir o valor inserido */}
-                <Text style={styles.valorExibido}>Valor inserido: {valor}</Text>
+                <Text style={styles.valorExibido}>Valor inserido: {despesas}</Text>
 
-                <Button
-                    title="Confirmar"
-                    color={'#569b4a'}
-                />
-                <Button
-                    title="Limpar"
-                    onPress={() => setValor('')}
-                />
 
+                <View style={styles.botaoConfirmar}>
+                    <Button
+                        title="Confirmar"
+                        color={'#569b4a'}
+                    />
+                </View>
+                <View style={styles.botaoLimpar}>
+                    <Button
+                        title="Limpar"
+                        onPress={() => setDespesas('')}
+                    />
+                </View>
+
+                <View style={{ flex: 1, padding: 24 }}>
+                    {isLoading ? (<ActivityIndicator />) : (
+                        <FlatList
+                            data={despesa}
+                            keyExtractor={({ id }) => id}
+                            renderItem={({ item }) => (
+                                <Text>
+                                    {item.title}, {item.realeaseYear}
+                                </Text>
+                            )}
+                        />
+                    )}
+
+                </View>
             </View>
-
-            <View style={styles.historico1}>
-                <Text>Historico 1</Text>
-            </View>
-
-            <View style={styles.historico2}>
-                <Text>Historico 2</Text>
-            </View>
-
-            <View style={styles.historico3}>
-                <Text>Historico 3</Text>
-            </View>
-
         </View>
     );
 };
@@ -90,18 +115,24 @@ const styles = StyleSheet.create({
     valorExibido: {
         fontSize: 18,
     },
+    botaoConfirmar: {
+        marginTop: 10
+    },
+    botaoLimpar: {
+        marginTop: 10
+    },
     historico1: {
-        flex: 0.5,
+        flex: 0.25,
         backgroundColor: '#f9a825',
     },
     historico2: {
-        flex: 0.5,
+        flex: 0.25,
         backgroundColor: '#a9a825'
     },
     historico3: {
-        flex: 0.5,
+        flex: 0.25,
         backgroundColor: '#ffffa5'
-    }
+    },
 });
 
 export default TelaDespesa;
