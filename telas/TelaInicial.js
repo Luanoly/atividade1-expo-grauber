@@ -63,6 +63,7 @@ const styles = StyleSheet.create({
         borderColor: '#6AAAE6',
         borderRadius: 4,
         padding: 10,
+        margin: 8,
     },
     menu: {
         flex: 0.4,

@@ -1,4 +1,5 @@
 import { View, Text, StyleSheet } from 'react-native';
+import { TextInput } from 'react-native-paper';
 
 const TelaDespesa = () => {
     return (
@@ -12,15 +13,13 @@ const TelaDespesa = () => {
             </View>
 
             <View style={styles.inserirDespesa}>
-                <View style={{ padding: 10, borderWidth: 1 }}>
-                    <Text style={{ fontSize: 20 }}>Um hisotico por vez</Text>
+                <View style={{ padding: 4, alignItems: 'center', }}>
+                    <Text style={{ fontSize: 24 }}>Inserir Despesa</Text>
                 </View>
             </View>
 
             <View style={styles.descricao}>
-                <View style={{ padding: 10, borderWidth: 1 }}>
-                    <Text style={{ fontSize: 20 }}>Um hisotico por vez</Text>
-                </View>
+                <TextInput />
             </View>
 
             <View style={styles.menu}>
@@ -56,15 +55,15 @@ const styles = StyleSheet.create({
         borderColor: '#6AAAE6',
         borderRadius: 4,
         padding: 10,
-        margin: 10
+        margin: 8,
     },
     descricao: {
         flex: 1,
         borderWidth: 4,
         borderColor: '#6AAAE6',
         borderRadius: 4,
-        padding: 10,
-        margin: 10,
+        padding: 4,
+        margin: 12,
     },
     menu: {
         flex: 0.4,
