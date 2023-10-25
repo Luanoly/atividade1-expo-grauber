@@ -13,7 +13,7 @@ const TelaInicial = () => {
             </View>
 
             <View style={styles.telaInicial}>
-                <Text style={{ color: 'black', marginTop: 30, fontSize: 20, color: '#6AAAE6', }}>ULTIMOS REGISTROS DO MÊS</Text>
+                <Text style={{ color: 'black', marginTop: 30, fontSize: 20, color: '#6AAAE6', }}>ALGUMA OUTRA COISA</Text>
             </View>
 
             <View style={styles.telaUltimosHistoricos}>

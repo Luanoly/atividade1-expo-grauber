@@ -1,5 +1,5 @@
 import { View, Text, StyleSheet } from 'react-native';
-import { TextInput } from 'react-native-paper';
+import { Button, TextInput } from 'react-native-paper';
 
 const TelaDespesa = () => {
     return (
@@ -14,10 +14,12 @@ const TelaDespesa = () => {
 
             <View style={styles.inserirDespesa}>
                 <View style={{ padding: 4, alignItems: 'center', }}>
-                    <Text style={{ fontSize: 24 }}>Inserir Despesa</Text>
+                    <Text style={{ fontSize: 24, color: 'white' }}>Inserir Despesa</Text>
                 </View>
-                <View>
-                    <TextInput label="R$: 00,00" />
+                <View sytle={styles.atributosDespesas}>
+                    <View style={styles.colunaDespesaUm}>
+                        <TextInput label="R$: 00,00" />
+                    </View>
                 </View>
             </View>
 
@@ -54,11 +56,16 @@ const styles = StyleSheet.create({
     },
     inserirDespesa: {
         flex: 2,
-        borderWidth: 12,
-        borderColor: '#6AAAE6',
+        backgroundColor: '#6AAAE6',
         borderRadius: 4,
         padding: 10,
         margin: 8,
+    },
+    atributosDespesas: {
+        alignItems: 'stretch',
+    },
+    colunaDespesaUm: {
+        width: 150,
     },
     descricao: {
         flex: 1,
