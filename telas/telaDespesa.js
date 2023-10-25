@@ -1,102 +1,74 @@
-import React, { useEffect, useState } from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, StatusBar, TextInput, Button, FlatList } from 'react-native';
-import { ActivityIndicator } from 'react-native-paper';
+import { View, Text, StyleSheet } from 'react-native';
 
 const TelaDespesa = () => {
-    const [isLoading, setLoading] = useState(true);
-    const [despesas, setDespesas] = useState([]); // Estado para armazenar o valor inserido
-
-    const getDespesas = async () => {
-        try {
-            const response = await fetch('https://projeto-nestjs-financas.onrender.com/despesas');
-            const json = await response.json();
-            setDespesas(json);
-        } catch (error) {
-            console.error(error);
-        } finally {
-            setLoading(false);
-        }
-    };
-
-    useEffect(() => {
-        getDespesas();
-    }, []);
-
     return (
         <View style={styles.container}>
-            <StatusBar style="auto" />
-            <View style={[styles.menuBar, { marginTop: 0 }]}>
-                <TouchableOpacity style={styles.menuItem}>
-                    <Text style={{ color: 'white', fontSize: 24 }}>PoupCerto</Text>
-                </TouchableOpacity>
-            </View>
 
-            <View style={styles.content}>
-
+            <View style={[styles.telaSuperior]}>
                 <View>
-                    <Text style={{ color: 'black', marginTop: 40, fontSize: 18, marginBottom: 20 }}>Categoria:</Text>
-
-                </View>
-
-                {/* Caixa de texto para inserir o valor */}
-                <TextInput
-                    placeholder="                      Insira o valor"
-                    style={styles.input}
-                    color={'#569b4a'}
-                />
-
-                <View style={styles.botaoConfirmar}>
-                    <Button
-                        title="Confirmar"
-                        color={'#569b4a'}
-                    />
-                </View>
-
-                <View style={{ flex: 1, padding: 24 }}>
-                    {isLoading ? (<ActivityIndicator />) : (
-                        <FlatList
-                            data={despesas}
-                            keyExtractor={({ id }) => id}
-                            renderItem={({ item }) => (
-                                <Text>
-                                    {item.categoria}, {item.valor}
-                                </Text>
-                            )}
-                        />
-                    )}
-
+                    <Text style={{ color: 'white', fontSize: 32, marginLeft: 24, marginTop: 40 }}>PoupCerto</Text>
+                    <Text style={{ color: 'white', fontSize: 28, marginLeft: 24, marginTop: 10 }}>R$: 1.236,43</Text>
                 </View>
             </View>
+
+            <View style={styles.inserirDespesa}>
+                <View style={{ padding: 10, borderWidth: 1 }}>
+                    <Text style={{ fontSize: 20 }}>Um hisotico por vez</Text>
+                </View>
+            </View>
+
+            <View style={styles.telaUltimosHistoricos}>
+                <View style={{ padding: 10, borderWidth: 1 }}>
+                    <Text style={{ fontSize: 20 }}>Um hisotico por vez</Text>
+                </View>
+            </View>
+
+            <View style={styles.menu}>
+
+            </View>
+
         </View>
     );
-};
+}
 
 const styles = StyleSheet.create({
+    // View principal não mexer
     container: {
         flex: 1,
         backgroundColor: 'white',
     },
-    menuBar: {
+    telaSuperior: {
+        flex: 1,
         flexDirection: 'row',
         justifyContent: 'space-around',
         alignItems: 'center',
-        backgroundColor: '#4682b4',
+        backgroundColor: '#6AAAE6',
         height: 70,
+        flexDirection: 'column',
+        alignItems: 'flex-start',
+        borderColor: 'white',
+        borderBottomWidth: 2,
+        borderStyle: 'solid'
     },
-    content: {
-        flex: 1,
-        alignItems: 'center',
-        justifyContent: 'flex-start',
-        backgroundColor: '#fff',
+    inserirDespesa: {
+        flex: 2,
+        borderWidth: 12,
+        borderColor: '#6AAAE6',
+        borderRadius: 4,
         padding: 10,
     },
-    input: {
-        width: '60%',
-        height: 40,
-        borderWidth: 1,
-        borderColor: '#ccc',
-        borderRadius: 5,
-        marginBottom: 10,
+    telaUltimosHistoricos: {
+        flex: 1,
+        borderWidth: 4,
+        borderColor: '#6AAAE6',
+        borderRadius: 4,
+        padding: 10,
+    },
+    menu: {
+        flex: 0.4,
+        borderTopWidth: 2,
+        borderColor: 'white',
+        backgroundColor: '#6AAAE6'
     },
 });
 
