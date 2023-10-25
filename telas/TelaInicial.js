@@ -4,15 +4,26 @@ import { View, Text, StyleSheet, TouchableOpacity, StatusBar, Button } from 'rea
 const TelaInicial = () => {
     return (
         <View style={styles.container}>
-            <View style={[styles.telaSuperior, { marginTop: 0 }]}>
-                <TouchableOpacity>
-                    <Text style={{ color: 'white', fontSize: 28, marginLeft: 24, marginBottom: 40 }}>PoupCerto</Text>
-                </TouchableOpacity>
 
+            <View style={[styles.telaSuperior]}>
+                <View>
+                    <Text style={{ color: 'white', fontSize: 32, marginLeft: 24, marginTop: 40 }}>PoupCerto</Text>
+                    <Text style={{ color: 'white', fontSize: 28, marginLeft: 24, marginTop: 10 }}>R$: 1.236,43</Text>
+                </View>
             </View>
 
-            <View style={styles.textoMeio}>
+            <View style={styles.telaInicial}>
                 <Text style={{ color: 'black', marginTop: 30, fontSize: 20, color: '#6AAAE6', }}>ULTIMOS REGISTROS DO MÊS</Text>
+            </View>
+
+            <View style={styles.telaUltimosHistoricos}>
+                <View style={{ padding: 10, borderWidth: 1 }}>
+                    <Text style={{ fontSize: 20 }}>Um hisotico por vez</Text>
+                </View>
+            </View>
+
+            <View style={styles.menu}>
+
             </View>
 
         </View>
@@ -38,11 +49,25 @@ const styles = StyleSheet.create({
         borderBottomWidth: 2,
         borderStyle: 'solid'
     },
-    textoMeio: {
-        flex: 3.5,
+    telaInicial: {
+        flex: 1,
         alignItems: 'center',
         justifyContent: 'flex-start',
         backgroundColor: 'white',
+        borderWidth: 1,
+        borderColor: 'red',
+    },
+    telaUltimosHistoricos: {
+        flex: 2,
+        borderWidth: 12,
+        borderColor: '#6AAAE6',
+        borderRadius: 4,
+    },
+    menu: {
+        flex: 0.4,
+        borderTopWidth: 2,
+        borderColor: 'white',
+        backgroundColor: '#6AAAE6'
     },
 });
 
