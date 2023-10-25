@@ -65,7 +65,8 @@ const styles = StyleSheet.create({
         alignItems: 'stretch',
     },
     colunaDespesaUm: {
-        width: 150,
+        width: 180,
+        padding: 8,
     },
     descricao: {
         flex: 1,
