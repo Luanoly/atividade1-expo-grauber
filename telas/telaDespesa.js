@@ -17,7 +17,7 @@ const TelaDespesa = () => {
                 </View>
             </View>
 
-            <View style={styles.telaUltimosHistoricos}>
+            <View style={styles.descricao}>
                 <View style={{ padding: 10, borderWidth: 1 }}>
                     <Text style={{ fontSize: 20 }}>Um hisotico por vez</Text>
                 </View>
@@ -56,13 +56,15 @@ const styles = StyleSheet.create({
         borderColor: '#6AAAE6',
         borderRadius: 4,
         padding: 10,
+        margin: 10
     },
-    telaUltimosHistoricos: {
+    descricao: {
         flex: 1,
         borderWidth: 4,
         borderColor: '#6AAAE6',
         borderRadius: 4,
         padding: 10,
+        margin: 10,
     },
     menu: {
         flex: 0.4,
