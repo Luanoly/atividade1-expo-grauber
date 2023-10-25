@@ -16,9 +16,18 @@ const TelaInicial = () => {
                 <Text style={{ color: 'black', marginTop: 30, fontSize: 20, color: '#6AAAE6', }}>ALGUMA OUTRA COISA</Text>
             </View>
 
-            <View style={styles.telaUltimosHistoricos}>
-                <View style={{ padding: 10, borderWidth: 1 }}>
-                    <Text style={{ fontSize: 20 }}>Um hisotico por vez</Text>
+            <View style={styles.telaUltimoHistorico}>
+                <View style={ styles.registroHistorico }>
+                    <Text style={{ fontSize: 20 }}>Farmácia</Text>
+                </View>
+                <View style={ styles.registroHistorico}>
+                    <Text style={{ fontSize: 20 }}>Mercado</Text>
+                </View>
+                <View style={ styles.registroHistorico}>
+                    <Text style={{ fontSize: 20 }}>Cartões</Text>
+                </View>
+                <View style={ styles.registroHistorico}>
+                    <Text style={{ fontSize: 20 }}>Outros</Text>
                 </View>
             </View>
 
@@ -57,13 +66,21 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         borderColor: 'red',
     },
-    telaUltimosHistoricos: {
+    telaUltimoHistorico: {
         flex: 2,
         borderWidth: 12,
         borderColor: '#6AAAE6',
         borderRadius: 4,
         padding: 10,
         margin: 8,
+    },
+    registroHistorico: {
+        backgroundColor: '#6AAAE6',
+        padding: 10,
+        borderWidth: 1,
+        alignItems: 'center',
+        marginTop: 20,
+        height: 64
     },
     menu: {
         flex: 0.4,
