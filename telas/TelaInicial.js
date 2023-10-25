@@ -62,6 +62,7 @@ const styles = StyleSheet.create({
         borderWidth: 12,
         borderColor: '#6AAAE6',
         borderRadius: 4,
+        padding: 10,
     },
     menu: {
         flex: 0.4,
