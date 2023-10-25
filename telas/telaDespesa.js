@@ -16,10 +16,13 @@ const TelaDespesa = () => {
                 <View style={{ padding: 4, alignItems: 'center', }}>
                     <Text style={{ fontSize: 24 }}>Inserir Despesa</Text>
                 </View>
+                <View>
+                    <TextInput label="R$: 00,00" />
+                </View>
             </View>
 
             <View style={styles.descricao}>
-                <TextInput />
+                <TextInput label="Descrição..." />
             </View>
 
             <View style={styles.menu}>
