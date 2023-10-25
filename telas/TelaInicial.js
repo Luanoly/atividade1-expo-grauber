@@ -1,5 +1,6 @@
 import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, StatusBar, Button } from 'react-native';
+import { Icon, Avatar } from 'react-native-paper';
 
 const TelaInicial = () => {
     return (
@@ -18,7 +19,7 @@ const TelaInicial = () => {
 
             <View style={styles.telaUltimoHistorico}>
                 <View style={ styles.registroHistorico }>
-                    <Text style={{ fontSize: 20, color: 'white' }}>Farmácia</Text>
+                    <Text style={{ fontSize: 20, color: 'white' }}> <Avatar.Image/> Farmácia</Text>
                 </View>
                 <View style={ styles.registroHistorico}>
                     <Text style={{ fontSize: 20, color: 'white' }}>Mercado</Text>
