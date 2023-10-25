@@ -1,3 +1,4 @@
+import { Select } from 'native-base';
 import { View, Text, StyleSheet } from 'react-native';
 import { Button, TextInput } from 'react-native-paper';
 
@@ -19,6 +20,10 @@ const TelaDespesa = () => {
                 <View sytle={styles.atributosDespesas}>
                     <View style={styles.colunaDespesaUm}>
                         <TextInput label="R$: 00,00" />
+
+                        {/* <Select placeholder='Descrição'>
+                            <Select.Item label="UX" value="ux" />
+                        </Select> */}
                     </View>
                 </View>
             </View>
