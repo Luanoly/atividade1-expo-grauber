@@ -9,7 +9,9 @@ const TelaInicial = () => {
             <View style={[styles.telaSuperior]}>
                 <View>
                     <Text style={{ color: 'white', fontSize: 32, marginLeft: 24, marginTop: 40 }}>PoupCerto</Text>
-                    <Text style={{ color: 'white', fontSize: 28, marginLeft: 24, marginTop: 10 }}>R$: 1.236,43</Text>
+                    <Text style={{ color: 'white', fontSize: 28, marginLeft: 24, marginTop: 10 }}>R$: 1.236,43 
+                    <Avatar.Icon size={28} color='white' icon="eye" />
+                    </Text>
                 </View>
             </View>
 
@@ -19,12 +21,12 @@ const TelaInicial = () => {
 
             <View style={styles.telaUltimoHistorico}>
                 <View style={ styles.registroHistorico }>
-                    <Avatar.Icon size={54} color='#6AAAE6' backgroundColor='white' icon="flask" />
+                    <Avatar.Icon size={54} color='#6AAAE6' backgroundColor='white' icon="ambulance" />
                     <Text style={{ fontSize: 20, color: 'white' }}>Farmácia</Text>
                     <Text style={{ fontSize: 20, color: 'white' }}>R$: 300</Text>
                 </View>
                 <View style={ styles.registroHistorico}>
-                    <Avatar.Icon size={54} color='#6AAAE6' backgroundColor='white' icon="tag" />
+                    <Avatar.Icon size={54} color='#6AAAE6' backgroundColor='white' icon="cart-arrow-down" />
                     <Text style={{ fontSize: 20, color: 'white' }}>Mercado</Text>
                     <Text style={{ fontSize: 20, color: 'white' }}>R$: 36,00</Text>
                 </View>
@@ -41,9 +43,9 @@ const TelaInicial = () => {
             </View>
 
             <View style={styles.menu}>
-                <Avatar.Icon size={54} color='#6AAAE6' backgroundColor='white' icon="package" />
-                <Avatar.Icon size={54} color='#6AAAE6' backgroundColor='white' icon="package" />
-                <Avatar.Icon size={54} color='#6AAAE6' backgroundColor='white' icon="package" />
+                <Avatar.Icon size={52} color='#6AAAE6' backgroundColor='white' icon="home" />
+                <Avatar.Icon size={64} color='#6AAAE6' backgroundColor='white' icon="cash-plus" />
+                <Avatar.Icon size={52} color='#6AAAE6' backgroundColor='white' icon="bug" />
             </View>
 
         </View>
