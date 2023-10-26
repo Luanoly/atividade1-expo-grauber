@@ -19,16 +19,24 @@ const TelaInicial = () => {
 
             <View style={styles.telaUltimoHistorico}>
                 <View style={ styles.registroHistorico }>
-                    <Text style={{ fontSize: 20, color: 'white' }}> <Avatar.Image/> Farmácia</Text>
+                    <Avatar.Icon size={54} icon="flask" />
+                    <Text style={{ fontSize: 20, color: 'white' }}>Farmácia</Text>
+                    <Text style={{ fontSize: 20, color: 'white' }}>5,00</Text>
                 </View>
                 <View style={ styles.registroHistorico}>
+                    <Avatar.Icon size={54} icon="tag" />
                     <Text style={{ fontSize: 20, color: 'white' }}>Mercado</Text>
+                    <Text style={{ fontSize: 20, color: 'white' }}>5,00</Text>
                 </View>
                 <View style={ styles.registroHistorico}>
+                    <Avatar.Icon size={54} icon="credit-card" />
                     <Text style={{ fontSize: 20, color: 'white' }}>Cartões</Text>
+                    <Text style={{ fontSize: 20, color: 'white' }}>5,00</Text>
                 </View>
                 <View style={ styles.registroHistorico}>
+                    <Avatar.Icon size={54} icon="package" />
                     <Text style={{ fontSize: 20, color: 'white' }}>Outros</Text>
+                    <Text style={{ fontSize: 20, color: 'white' }}>5,00</Text>
                 </View>
             </View>
 
@@ -78,11 +86,13 @@ const styles = StyleSheet.create({
     },
     registroHistorico: {
         backgroundColor: '#6AAAE6',
+        flexDirection: 'row',
         padding: 10,
         alignItems: 'center',
         height: 64,
         borderRadius: 8,
-        justifyContent: 'center',
+        justifyContent: 'space-between',
+        
     },
     menu: {
         flex: 0.4,
