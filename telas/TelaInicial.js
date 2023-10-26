@@ -19,29 +19,31 @@ const TelaInicial = () => {
 
             <View style={styles.telaUltimoHistorico}>
                 <View style={ styles.registroHistorico }>
-                    <Avatar.Icon size={54} icon="flask" />
+                    <Avatar.Icon size={54} color='#6AAAE6' backgroundColor='white' icon="flask" />
                     <Text style={{ fontSize: 20, color: 'white' }}>Farmácia</Text>
-                    <Text style={{ fontSize: 20, color: 'white' }}>5,00</Text>
+                    <Text style={{ fontSize: 20, color: 'white' }}>R$: 300</Text>
                 </View>
                 <View style={ styles.registroHistorico}>
-                    <Avatar.Icon size={54} icon="tag" />
+                    <Avatar.Icon size={54} color='#6AAAE6' backgroundColor='white' icon="tag" />
                     <Text style={{ fontSize: 20, color: 'white' }}>Mercado</Text>
-                    <Text style={{ fontSize: 20, color: 'white' }}>5,00</Text>
+                    <Text style={{ fontSize: 20, color: 'white' }}>R$: 36,00</Text>
                 </View>
                 <View style={ styles.registroHistorico}>
-                    <Avatar.Icon size={54} icon="credit-card" />
+                    <Avatar.Icon size={54} color='#6AAAE6' backgroundColor='white' icon="credit-card" />
                     <Text style={{ fontSize: 20, color: 'white' }}>Cartões</Text>
-                    <Text style={{ fontSize: 20, color: 'white' }}>5,00</Text>
+                    <Text style={{ fontSize: 20, color: 'white' }}>R$: 209,00</Text>
                 </View>
                 <View style={ styles.registroHistorico}>
-                    <Avatar.Icon size={54} icon="package" />
+                    <Avatar.Icon size={54} color='#6AAAE6' backgroundColor='white' icon="package" />
                     <Text style={{ fontSize: 20, color: 'white' }}>Outros</Text>
-                    <Text style={{ fontSize: 20, color: 'white' }}>5,00</Text>
+                    <Text style={{ fontSize: 20, color: 'white' }}>R$: 100,00</Text>
                 </View>
             </View>
 
             <View style={styles.menu}>
-
+                <Avatar.Icon size={54} color='#6AAAE6' backgroundColor='white' icon="package" />
+                <Avatar.Icon size={54} color='#6AAAE6' backgroundColor='white' icon="package" />
+                <Avatar.Icon size={54} color='#6AAAE6' backgroundColor='white' icon="package" />
             </View>
 
         </View>
@@ -73,7 +75,7 @@ const styles = StyleSheet.create({
         justifyContent: 'flex-start',
         backgroundColor: 'white',
         borderWidth: 1,
-        borderColor: 'red',
+        borderColor: 'grey',
     },
     telaUltimoHistorico: {
         flex: 2,
@@ -91,14 +93,17 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         height: 64,
         borderRadius: 8,
-        justifyContent: 'space-between',
+        justifyContent: 'space-around',
         
     },
     menu: {
         flex: 0.4,
         borderTopWidth: 2,
         borderColor: 'white',
-        backgroundColor: '#6AAAE6'
+        backgroundColor: '#6AAAE6',
+        flexDirection: 'row',
+        justifyContent: 'space-around',
+        alignItems: 'center'
     },
 });
 
