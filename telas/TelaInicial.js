@@ -43,9 +43,9 @@ const TelaInicial = () => {
             </View>
 
             <View style={styles.menu}>
-                <Avatar.Icon size={52} color='white' icon="home" />
-                <Avatar.Icon size={80} color='white' icon="cash-plus" />
-                <Avatar.Icon size={52} color='white' icon="bug" />
+                <Avatar.Icon size={52} color='white' backgroundColor='#6AAAE6' icon="home" />
+                <Avatar.Icon size={90} color='white' backgroundColor='#6AAAE6' borderWidth={1} borderColor='grey' icon="cash-plus" />
+                <Avatar.Icon size={52} color='white' backgroundColor='#6AAAE6' icon="bug" />
             </View>
 
         </View>
