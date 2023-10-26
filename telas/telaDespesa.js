@@ -1,6 +1,6 @@
 import { Select } from 'native-base';
 import { View, Text, StyleSheet } from 'react-native';
-import { Button, TextInput } from 'react-native-paper';
+import { Avatar, TextInput } from 'react-native-paper';
 
 const TelaDespesa = () => {
     return (
@@ -33,7 +33,9 @@ const TelaDespesa = () => {
             </View>
 
             <View style={styles.menu}>
-
+                <Avatar.Icon size={52} color='#6AAAE6' backgroundColor='white' icon="home" />
+                <Avatar.Icon size={64} color='#6AAAE6' backgroundColor='white' icon="cash-plus" />
+                <Avatar.Icon size={52} color='#6AAAE6' backgroundColor='white' icon="bug" />                    
             </View>
 
         </View>
@@ -85,7 +87,10 @@ const styles = StyleSheet.create({
         flex: 0.4,
         borderTopWidth: 2,
         borderColor: 'white',
-        backgroundColor: '#6AAAE6'
+        backgroundColor: '#6AAAE6',
+        flexDirection: 'row',
+        justifyContent: 'space-around',
+        alignItems: 'center'
     },
 });
 
