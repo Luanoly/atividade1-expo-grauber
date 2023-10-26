@@ -8,15 +8,15 @@ const TelaInicial = () => {
 
             <View style={[styles.telaSuperior]}>
                 <View>
-                    <Text style={{ color: 'white', fontSize: 32, marginLeft: 24, marginTop: 40 }}>PoupCerto</Text>
-                    <Text style={{ color: 'white', fontSize: 28, marginLeft: 24, marginTop: 10 }}>R$: 1.236,43 
-                    <Avatar.Icon size={28} color='white' icon="eye" />
+                    <Text style={{ color: 'white', fontSize: 28, marginLeft: 24, marginTop: 40 }}>PoupCerto</Text>
+                    <Text style={{ color: 'white', fontSize: 36, marginLeft: 24, marginTop: 10 }}>R$: 1.236,43 
+                    <Avatar.Icon size={28} color='white' backgroundColor='#6AAAE6' icon="eye" />
                     </Text>
                 </View>
             </View>
 
             <View style={styles.telaInicial}>
-                <Text style={{ color: 'black', marginTop: 30, fontSize: 20, color: '#6AAAE6', }}>ALGUMA OUTRA COISA</Text>
+
             </View>
 
             <View style={styles.telaUltimoHistorico}>
@@ -43,9 +43,9 @@ const TelaInicial = () => {
             </View>
 
             <View style={styles.menu}>
-                <Avatar.Icon size={52} color='#6AAAE6' backgroundColor='white' icon="home" />
-                <Avatar.Icon size={64} color='#6AAAE6' backgroundColor='white' icon="cash-plus" />
-                <Avatar.Icon size={52} color='#6AAAE6' backgroundColor='white' icon="bug" />
+                <Avatar.Icon size={52} color='white' icon="home" />
+                <Avatar.Icon size={80} color='white' icon="cash-plus" />
+                <Avatar.Icon size={52} color='white' icon="bug" />
             </View>
 
         </View>
@@ -75,9 +75,9 @@ const styles = StyleSheet.create({
         flex: 1,
         alignItems: 'center',
         justifyContent: 'flex-start',
-        backgroundColor: 'white',
+        backgroundColor: 'grey',
         borderWidth: 1,
-        borderColor: 'grey',
+        margin: 4
     },
     telaUltimoHistorico: {
         flex: 2,
