@@ -23,7 +23,7 @@ const TelaInicial = () => {
                 <View style={ styles.registroHistorico }>
                     <Avatar.Icon size={54} color='#6AAAE6' backgroundColor='white' icon="ambulance" />
                     <Text style={{ fontSize: 20, color: 'white' }}>Farmácia</Text>
-                    <Text style={{ fontSize: 20, color: 'white' }}>R$: 300</Text>
+                    <Text style={{ fontSize: 20, color: 'white' }}>R$: 300,00</Text>
                 </View>
                 <View style={ styles.registroHistorico}>
                     <Avatar.Icon size={54} color='#6AAAE6' backgroundColor='white' icon="cart-arrow-down" />
