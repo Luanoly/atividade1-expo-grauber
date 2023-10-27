@@ -84,7 +84,7 @@ const styles = StyleSheet.create({
         margin: 12,
     },
     menu: {
-        flex: 0.4,
+        flex: 0.3,
         borderTopWidth: 2,
         borderColor: 'white',
         backgroundColor: '#6AAAE6',

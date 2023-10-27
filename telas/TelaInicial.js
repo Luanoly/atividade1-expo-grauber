@@ -112,7 +112,7 @@ const styles = StyleSheet.create({
         
     },
     menu: {
-        flex: 0.4,
+        flex: 0.3,
         borderTopWidth: 2,
         borderColor: 'white',
         backgroundColor: '#6AAAE6',
