@@ -18,11 +18,11 @@ const TelaInicial = () => {
             <View style={styles.telaInicial}>
                 <View style={styles.componenteInicial}>
                     <Text style={styles.fontePadrao}>Histórico</Text>
-                    <Avatar.Icon size={120} backgroundColor='#134F29' icon="file-document-multiple-outline"/>
+                    <Avatar.Icon size={98} backgroundColor='#134F29' icon="file-document-multiple-outline"/>
                 </View>
                 <View style={styles.componenteInicial}>
                     <Text style={styles.fontePadrao}>Cofre</Text>
-                    <Avatar.Icon size={120} backgroundColor='#134F29' icon="piggy-bank-outline"/>
+                    <Avatar.Icon size={98} backgroundColor='#134F29' icon="piggy-bank-outline"/>
                 </View>
             </View>
 
@@ -47,6 +47,11 @@ const TelaInicial = () => {
                     <Text style={styles.fontePadrao}>Outros</Text>
                     <Text style={styles.fontePadrao}>R$: 100,00</Text>
                 </View>
+                <View style={ styles.registroHistorico}>
+                    <Avatar.Icon size={54} color='#134F29' backgroundColor='white' icon="bus" />
+                    <Text style={styles.fontePadrao}>Transporte</Text>
+                    <Text style={styles.fontePadrao}>R$: 0,00</Text>
+                </View>
             </View>
 
             <View style={styles.menu}>
@@ -63,7 +68,7 @@ const styles = StyleSheet.create({
     // View principal não mexer
     container: {
         flex: 1,
-        backgroundColor: 'white',
+        backgroundColor: '#082D15',
     },
     telaSuperior: {
         flex: 1,
@@ -74,8 +79,8 @@ const styles = StyleSheet.create({
         height: 70,
         flexDirection: 'column',
         alignItems: 'flex-start',
-        borderColor: 'white',
-        borderBottomWidth: 2,
+        borderColor: 'grey',
+        borderBottomWidth: 1,
         borderStyle: 'solid'
     },
     telaInicial: {
@@ -89,8 +94,10 @@ const styles = StyleSheet.create({
         backgroundColor: '#134F29',
         width: '40%',
         alignItems: 'center',
-        height: '90%',
+        height: '70%',
         borderRadius: 4,
+        borderColor: 'grey',
+        borderWidth: 1
     },
     telaUltimoHistorico: {
         flex: 2,
@@ -114,7 +121,7 @@ const styles = StyleSheet.create({
     menu: {
         flex: 0.3,
         borderTopWidth: 2,
-        borderColor: 'white',
+        borderColor: 'grey',
         backgroundColor: '#082D15',
         flexDirection: 'row',
         justifyContent: 'space-around',
