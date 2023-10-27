@@ -16,29 +16,36 @@ const TelaInicial = () => {
             </View>
 
             <View style={styles.telaInicial}>
-
+                <View style={styles.componenteInicial}>
+                    <Text style={styles.fontePadrao}>Histórico</Text>
+                    <Avatar.Icon size={120} backgroundColor='#6AAAE6' icon="file-document-multiple-outline"/>
+                </View>
+                <View style={styles.componenteInicial}>
+                    <Text style={styles.fontePadrao}>Cofre</Text>
+                    <Avatar.Icon size={120} backgroundColor='#6AAAE6' icon="piggy-bank-outline"/>
+                </View>
             </View>
 
             <View style={styles.telaUltimoHistorico}>
                 <View style={ styles.registroHistorico }>
                     <Avatar.Icon size={54} color='#6AAAE6' backgroundColor='white' icon="ambulance" />
-                    <Text style={{ fontSize: 20, color: 'white' }}>Farmácia</Text>
-                    <Text style={{ fontSize: 20, color: 'white' }}>R$: 300,00</Text>
+                    <Text style={styles.fontePadrao}>Farmácia</Text>
+                    <Text style={styles.fontePadrao}>R$: 300,00</Text>
                 </View>
                 <View style={ styles.registroHistorico}>
                     <Avatar.Icon size={54} color='#6AAAE6' backgroundColor='white' icon="cart-arrow-down" />
-                    <Text style={{ fontSize: 20, color: 'white' }}>Mercado</Text>
-                    <Text style={{ fontSize: 20, color: 'white' }}>R$: 36,00</Text>
+                    <Text style={styles.fontePadrao}>Mercado</Text>
+                    <Text style={styles.fontePadrao}>R$: 36,00</Text>
                 </View>
                 <View style={ styles.registroHistorico}>
                     <Avatar.Icon size={54} color='#6AAAE6' backgroundColor='white' icon="credit-card" />
-                    <Text style={{ fontSize: 20, color: 'white' }}>Cartões</Text>
-                    <Text style={{ fontSize: 20, color: 'white' }}>R$: 209,00</Text>
+                    <Text style={styles.fontePadrao}>Cartões</Text>
+                    <Text style={styles.fontePadrao}>R$: 209,00</Text>
                 </View>
                 <View style={ styles.registroHistorico}>
                     <Avatar.Icon size={54} color='#6AAAE6' backgroundColor='white' icon="package" />
-                    <Text style={{ fontSize: 20, color: 'white' }}>Outros</Text>
-                    <Text style={{ fontSize: 20, color: 'white' }}>R$: 100,00</Text>
+                    <Text style={styles.fontePadrao}>Outros</Text>
+                    <Text style={styles.fontePadrao}>R$: 100,00</Text>
                 </View>
             </View>
 
@@ -74,10 +81,16 @@ const styles = StyleSheet.create({
     telaInicial: {
         flex: 1,
         alignItems: 'center',
-        justifyContent: 'flex-start',
-        backgroundColor: 'grey',
-        borderWidth: 1,
-        margin: 4
+        flexDirection: 'row',
+        justifyContent: 'space-evenly',
+        margin: 4,
+    },
+    componenteInicial: {
+        backgroundColor: '#6AAAE6',
+        width: '40%',
+        alignItems: 'center',
+        height: '90%',
+        borderRadius: 4,
     },
     telaUltimoHistorico: {
         flex: 2,
@@ -106,6 +119,11 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-around',
         alignItems: 'center'
+    },
+    /// Fonte padrão para texto
+    fontePadrao: {
+        fontSize: 20,
+         color: 'white'
     },
 });
 
