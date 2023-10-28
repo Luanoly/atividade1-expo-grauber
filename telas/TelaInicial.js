@@ -7,12 +7,12 @@ const TelaInicial = () => {
         <View style={styles.container}>
 
             <View style={[styles.telaSuperior]}>
-             <Text style={{ color: 'white', fontSize: 20, marginLeft: 24, marginTop: 40 }}>PoupCerto</Text>
+             <Text style={{ color: '#fff', fontSize: 20, marginLeft: 24, marginTop: 40 }}>PoupCerto</Text>
                 <View style={styles.telaDespesaValor}>
-                    <Text style={{ color: 'white', fontSize: 18, marginLeft: 24, marginTop: 4 }}>Despesa:</Text>
+                    <Text style={{ color: '#fff', fontSize: 18, marginLeft: 24, marginTop: 4 }}>Despesa:</Text>
                      <View style={{flexDirection: 'row', alignItems: 'center'}}>
-                       <Text style={{ color: 'white', fontSize: 32, marginLeft: 24, marginTop: 4 }}>R$: 645,00</Text>
-                       <Avatar.Icon size={28} color='white' backgroundColor='#003B45' icon="eye" />
+                       <Text style={{ color: '#fff', fontSize: 32, marginLeft: 24, marginTop: 4 }}>R$: 645,00</Text>
+                       <Avatar.Icon size={28} color='#fff' backgroundColor='#003B45' icon="eye" />
                      </View>
                 </View>
             </View>
@@ -30,27 +30,27 @@ const TelaInicial = () => {
 
             <View style={styles.telaUltimoHistorico}>
                 <View style={ styles.registroHistorico }>
-                    <Avatar.Icon size={54} color='#004B57' backgroundColor='white' icon="ambulance" />
+                    <Avatar.Icon size={54} color='#004B57' backgroundColor='#fff' icon="ambulance" />
                     <Text style={styles.fontePadrao}>Farmácia</Text>
                     <Text style={styles.fontePadrao}>R$: 300,00</Text>
                 </View>
                 <View style={ styles.registroHistorico}>
-                    <Avatar.Icon size={54} color='#004B57' backgroundColor='white' icon="cart-arrow-down" />
+                    <Avatar.Icon size={54} color='#004B57' backgroundColor='#fff' icon="cart-arrow-down" />
                     <Text style={styles.fontePadrao}>Mercado</Text>
                     <Text style={styles.fontePadrao}>R$: 36,00</Text>
                 </View>
                 <View style={ styles.registroHistorico}>
-                    <Avatar.Icon size={54} color='#004B57' backgroundColor='white' icon="credit-card" />
+                    <Avatar.Icon size={54} color='#004B57' backgroundColor='#fff' icon="credit-card" />
                     <Text style={styles.fontePadrao}>Cartões</Text>
                     <Text style={styles.fontePadrao}>R$: 209,00</Text>
                 </View>
                 <View style={ styles.registroHistorico}>
-                    <Avatar.Icon size={54} color='#004B57' backgroundColor='white' icon="package" />
+                    <Avatar.Icon size={54} color='#004B57' backgroundColor='#fff' icon="package" />
                     <Text style={styles.fontePadrao}>Outros</Text>
                     <Text style={styles.fontePadrao}>R$: 100,00</Text>
                 </View>
                 <View style={ styles.registroHistorico}>
-                    <Avatar.Icon size={54} color='#004B57' backgroundColor='white' icon="bus" />
+                    <Avatar.Icon size={54} color='#004B57' backgroundColor='#fff' icon="bus" />
                     <Text style={styles.fontePadrao}>Transporte</Text>
                     <Text style={styles.fontePadrao}>R$: 0,00</Text>
                 </View>
@@ -61,7 +61,7 @@ const TelaInicial = () => {
                     <Avatar.Icon size={38} color='#798899' backgroundColor='#fff' icon="home" />
                     <Text style={{color: '#798899'}}>Início</Text>
                 </View>
-                    <Avatar.Icon size={90} color='#798899' backgroundColor='#fff' borderWidth={1} borderColor='grey' icon="cash-plus" />
+                    <Avatar.Icon size={90} color='#AA0014' backgroundColor='#fff' borderWidth={1} borderColor='#AA0014' icon="cash-plus" />
                 <View style={ styles.iconesMenu}>
                     <Avatar.Icon size={38} color='#798899' backgroundColor='#fff' icon="bug" />
                     <Text style={{color: '#798899'}}>Sobre</Text>
@@ -86,7 +86,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#004B57',
         flexDirection: 'column',
         alignItems: 'flex-start',
-        borderColor: 'grey',
+        borderColor: '#808080 ',
         borderBottomWidth: 1,
         borderStyle: 'solid',
     },
@@ -118,7 +118,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         height: '70%',
         borderRadius: 4,
-        borderColor: 'grey',
+        borderColor: '#808080 ',
         borderWidth: 1
     },
     telaUltimoHistorico: {
@@ -145,7 +145,7 @@ const styles = StyleSheet.create({
     menu: {
         flex: 0.3,
         borderTopWidth: 1,
-        borderColor: 'grey',
+        borderColor: '#808080 ',
         backgroundColor: '#fff',
         flexDirection: 'row',
         justifyContent: 'space-around',
