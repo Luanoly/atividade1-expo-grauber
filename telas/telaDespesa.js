@@ -33,9 +33,9 @@ const TelaDespesa = () => {
             </View>
 
             <View style={styles.menu}>
-                <Avatar.Icon size={52} color='#6AAAE6' backgroundColor='white' icon="home" />
-                <Avatar.Icon size={64} color='#6AAAE6' backgroundColor='white' icon="cash-plus" />
-                <Avatar.Icon size={52} color='#6AAAE6' backgroundColor='white' icon="bug" />                    
+                <Avatar.Icon size={52} color='#798899' backgroundColor='#fff' icon="home" />
+                <Avatar.Icon size={90} color='#798899' backgroundColor='#fff' borderWidth={1} borderColor='grey' icon="cash-plus" />
+                <Avatar.Icon size={52} color='#798899' backgroundColor='#fff' icon="bug" />
             </View>
 
         </View>
@@ -85,9 +85,9 @@ const styles = StyleSheet.create({
     },
     menu: {
         flex: 0.3,
-        borderTopWidth: 2,
-        borderColor: 'white',
-        backgroundColor: '#6AAAE6',
+        borderTopWidth: 1,
+        borderColor: 'grey',
+        backgroundColor: '#fff',
         flexDirection: 'row',
         justifyContent: 'space-around',
         alignItems: 'center'

@@ -11,7 +11,7 @@ const TelaInicial = () => {
                 <View style={styles.telaDespesaValor}>
                     <Text style={{ color: 'white', fontSize: 18, marginLeft: 24, marginTop: 4 }}>Despesa:</Text>
                      <View style={{flexDirection: 'row', alignItems: 'center'}}>
-                       <Text style={{ color: 'white', fontSize: 32, marginLeft: 24, marginTop: 4 }}>R$: 236,43</Text>
+                       <Text style={{ color: 'white', fontSize: 32, marginLeft: 24, marginTop: 4 }}>R$: 645,00</Text>
                        <Avatar.Icon size={28} color='white' backgroundColor='#003B45' icon="eye" />
                      </View>
                 </View>
@@ -20,46 +20,46 @@ const TelaInicial = () => {
             <View style={styles.telaInicial}>
                 <View style={styles.componenteInicial}>
                     <Text style={styles.fontePadrao}>Histórico</Text>
-                    <Avatar.Icon size={98} backgroundColor='#134F29' icon="file-document-multiple-outline"/>
+                    <Avatar.Icon size={96} backgroundColor='#004B57' icon="file-document-multiple-outline"/>
                 </View>
                 <View style={styles.componenteInicial}>
                     <Text style={styles.fontePadrao}>Cofre</Text>
-                    <Avatar.Icon size={98} backgroundColor='#134F29' icon="piggy-bank-outline"/>
+                    <Avatar.Icon size={96} backgroundColor='#004B57' icon="piggy-bank-outline"/>
                 </View>
             </View>
 
             <View style={styles.telaUltimoHistorico}>
                 <View style={ styles.registroHistorico }>
-                    <Avatar.Icon size={54} color='#134F29' backgroundColor='white' icon="ambulance" />
+                    <Avatar.Icon size={54} color='#004B57' backgroundColor='white' icon="ambulance" />
                     <Text style={styles.fontePadrao}>Farmácia</Text>
                     <Text style={styles.fontePadrao}>R$: 300,00</Text>
                 </View>
                 <View style={ styles.registroHistorico}>
-                    <Avatar.Icon size={54} color='#134F29' backgroundColor='white' icon="cart-arrow-down" />
+                    <Avatar.Icon size={54} color='#004B57' backgroundColor='white' icon="cart-arrow-down" />
                     <Text style={styles.fontePadrao}>Mercado</Text>
                     <Text style={styles.fontePadrao}>R$: 36,00</Text>
                 </View>
                 <View style={ styles.registroHistorico}>
-                    <Avatar.Icon size={54} color='#134F29' backgroundColor='white' icon="credit-card" />
+                    <Avatar.Icon size={54} color='#004B57' backgroundColor='white' icon="credit-card" />
                     <Text style={styles.fontePadrao}>Cartões</Text>
                     <Text style={styles.fontePadrao}>R$: 209,00</Text>
                 </View>
                 <View style={ styles.registroHistorico}>
-                    <Avatar.Icon size={54} color='#134F29' backgroundColor='white' icon="package" />
+                    <Avatar.Icon size={54} color='#004B57' backgroundColor='white' icon="package" />
                     <Text style={styles.fontePadrao}>Outros</Text>
                     <Text style={styles.fontePadrao}>R$: 100,00</Text>
                 </View>
                 <View style={ styles.registroHistorico}>
-                    <Avatar.Icon size={54} color='#134F29' backgroundColor='white' icon="bus" />
+                    <Avatar.Icon size={54} color='#004B57' backgroundColor='white' icon="bus" />
                     <Text style={styles.fontePadrao}>Transporte</Text>
                     <Text style={styles.fontePadrao}>R$: 0,00</Text>
                 </View>
             </View>
 
             <View style={styles.menu}>
-                <Avatar.Icon size={52} color='white' backgroundColor='#082D15' icon="home" />
-                <Avatar.Icon size={90} color='white' backgroundColor='#082D15' borderWidth={1} borderColor='grey' icon="cash-plus" />
-                <Avatar.Icon size={52} color='white' backgroundColor='#082D15' icon="bug" />
+                <Avatar.Icon size={52} color='#798899' backgroundColor='#fff' icon="home" />
+                <Avatar.Icon size={90} color='#798899' backgroundColor='#fff' borderWidth={1} borderColor='grey' icon="cash-plus" />
+                <Avatar.Icon size={52} color='#798899' backgroundColor='#fff' icon="bug" />
             </View>
 
         </View>
@@ -70,7 +70,7 @@ const styles = StyleSheet.create({
     // View principal não mexer
     container: {
         flex: 1,
-        backgroundColor: '#082D15',
+        backgroundColor: '#fff',
     },
     telaSuperior: {
         flex: 1,
@@ -100,10 +100,14 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         flexDirection: 'row',
         justifyContent: 'space-evenly',
-        margin: 4,
+        margin: 8,
+        backgroundColor: '#003B45',
+        borderWidth: 2,
+        borderRadius: 4,
+        borderColor: '#003B45',
     },
     componenteInicial: {
-        backgroundColor: '#134F29',
+        backgroundColor: '#004B57',
         width: '40%',
         alignItems: 'center',
         height: '70%',
@@ -114,14 +118,15 @@ const styles = StyleSheet.create({
     telaUltimoHistorico: {
         flex: 2,
         borderWidth: 12,
-        borderColor: '#134F29',
+        borderColor: '#004B57',
         borderRadius: 4,
         padding: 10,
         margin: 8,
-        justifyContent: 'space-around'
+        justifyContent: 'space-around',
+        backgroundColor: '#003B45'
     },
     registroHistorico: {
-        backgroundColor: '#134F29',
+        backgroundColor: '#004B57',
         flexDirection: 'row',
         padding: 10,
         alignItems: 'center',
@@ -132,9 +137,9 @@ const styles = StyleSheet.create({
     },
     menu: {
         flex: 0.3,
-        borderTopWidth: 2,
+        borderTopWidth: 1,
         borderColor: 'grey',
-        backgroundColor: '#082D15',
+        backgroundColor: '#fff',
         flexDirection: 'row',
         justifyContent: 'space-around',
         alignItems: 'center'
