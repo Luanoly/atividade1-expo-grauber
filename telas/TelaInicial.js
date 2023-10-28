@@ -20,11 +20,11 @@ const TelaInicial = () => {
             <View style={styles.telaInicial}>
                 <View style={styles.componenteInicial}>
                     <Text style={styles.fontePadrao}>Histórico</Text>
-                    <Avatar.Icon size={96} backgroundColor='#004B57' icon="file-document-multiple-outline"/>
+                    <Avatar.Icon size={66} backgroundColor='#004B57' icon="file-document-multiple-outline"/>
                 </View>
                 <View style={styles.componenteInicial}>
                     <Text style={styles.fontePadrao}>Cofre</Text>
-                    <Avatar.Icon size={96} backgroundColor='#004B57' icon="piggy-bank-outline"/>
+                    <Avatar.Icon size={66} backgroundColor='#004B57' icon="piggy-bank-outline"/>
                 </View>
             </View>
 
@@ -57,9 +57,15 @@ const TelaInicial = () => {
             </View>
 
             <View style={styles.menu}>
-                <Avatar.Icon size={52} color='#798899' backgroundColor='#fff' icon="home" />
-                <Avatar.Icon size={90} color='#798899' backgroundColor='#fff' borderWidth={1} borderColor='grey' icon="cash-plus" />
-                <Avatar.Icon size={52} color='#798899' backgroundColor='#fff' icon="bug" />
+                <View style={ styles.iconesMenu}>
+                    <Avatar.Icon size={38} color='#798899' backgroundColor='#fff' icon="home" />
+                    <Text>Início</Text>
+                </View>
+                    <Avatar.Icon size={90} color='#798899' backgroundColor='#fff' borderWidth={1} borderColor='grey' icon="cash-plus" />
+                <View style={ styles.iconesMenu}>
+                    <Avatar.Icon size={38} color='#798899' backgroundColor='#fff' icon="bug" />
+                    <Text>Sobre</Text>
+                </View>
             </View>
 
         </View>
@@ -73,7 +79,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#fff',
     },
     telaSuperior: {
-        flex: 1,
+        flex: 0.9,
         flexDirection: 'row',
         justifyContent: 'space-around',
         alignItems: 'center',
@@ -86,8 +92,8 @@ const styles = StyleSheet.create({
     },
     telaDespesaValor: {
         backgroundColor: '#003B45',
-        borderWidth: 1,
-        borderColor: '#003B45',
+        borderBottomWidth: 2,
+        borderColor: '#798899',
         borderRadius: 4,
         height: 90,
         width: 370,
@@ -96,7 +102,7 @@ const styles = StyleSheet.create({
         alignItems: 'flex-start'
     },
     telaInicial: {
-        flex: 1,
+        flex: 0.6,
         alignItems: 'center',
         flexDirection: 'row',
         justifyContent: 'space-evenly',
@@ -116,7 +122,7 @@ const styles = StyleSheet.create({
         borderWidth: 1
     },
     telaUltimoHistorico: {
-        flex: 2,
+        flex: 1.6,
         borderWidth: 12,
         borderColor: '#004B57',
         borderRadius: 4,
@@ -131,9 +137,10 @@ const styles = StyleSheet.create({
         padding: 10,
         alignItems: 'center',
         height: 64,
-        borderRadius: 8,
         justifyContent: 'space-around',
-        
+        borderRadius: 8,
+        borderBottomWidth: 2,
+        borderColor: '#798899'
     },
     menu: {
         flex: 0.3,
@@ -144,10 +151,15 @@ const styles = StyleSheet.create({
         justifyContent: 'space-around',
         alignItems: 'center'
     },
+    iconesMenu: {
+        alignItems: 'center',
+        borderWidth: 1,
+        height: 60
+    },
     /// Fonte padrão para texto
     fontePadrao: {
         fontSize: 20,
-         color: 'white'
+         color: '#fff'
     },
 });
 
