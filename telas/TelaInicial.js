@@ -7,11 +7,13 @@ const TelaInicial = () => {
         <View style={styles.container}>
 
             <View style={[styles.telaSuperior]}>
-                <View>
-                    <Text style={{ color: 'white', fontSize: 28, marginLeft: 24, marginTop: 40 }}>PoupCerto</Text>
-                    <Text style={{ color: 'white', fontSize: 36, marginLeft: 24, marginTop: 10 }}>R$: 1.236,43 
-                    <Avatar.Icon size={28} color='white' backgroundColor='#0A3318' icon="eye" />
-                    </Text>
+             <Text style={{ color: 'white', fontSize: 20, marginLeft: 24, marginTop: 40 }}>PoupCerto</Text>
+                <View style={styles.telaDespesaValor}>
+                    <Text style={{ color: 'white', fontSize: 18, marginLeft: 24, marginTop: 4 }}>Despesa:</Text>
+                     <View style={{flexDirection: 'row', alignItems: 'center'}}>
+                       <Text style={{ color: 'white', fontSize: 32, marginLeft: 24, marginTop: 4 }}>R$: 236,43</Text>
+                       <Avatar.Icon size={28} color='white' backgroundColor='#003B45' icon="eye" />
+                     </View>
                 </View>
             </View>
 
@@ -75,13 +77,23 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-around',
         alignItems: 'center',
-        backgroundColor: '#0A3318',
-        height: 70,
+        backgroundColor: '#004B57',
         flexDirection: 'column',
         alignItems: 'flex-start',
         borderColor: 'grey',
         borderBottomWidth: 1,
-        borderStyle: 'solid'
+        borderStyle: 'solid',
+    },
+    telaDespesaValor: {
+        backgroundColor: '#003B45',
+        borderWidth: 1,
+        borderColor: '#003B45',
+        borderRadius: 4,
+        height: 90,
+        width: 370,
+        marginLeft: 8,
+        marginBottom: 10,
+        alignItems: 'flex-start'
     },
     telaInicial: {
         flex: 1,
