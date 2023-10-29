@@ -1,9 +1,9 @@
 import React from 'react';
-import TelaInicial from './telas/TelaInicial';
+import TelaPrincipal from './telas/telaPrincipal';
 import TelaDespesa from './telas/telaDespesa';
 
 export default function App() {
-  return <TelaInicial />;
+  return <TelaPrincipal />;
 }
 
 // Icones
