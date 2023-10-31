@@ -94,7 +94,8 @@ const styles = StyleSheet.create({
         backgroundColor: '#003B45',
         borderBottomWidth: 0.9,
         borderColor: '#798899',
-        borderRadius: 4,
+        borderTopEndRadius: 44,
+        borderBottomEndRadius: 44,
         height: 90,
         width: 370,
         marginLeft: 8,
@@ -137,7 +138,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         height: 64,
         justifyContent: 'space-around',
-        borderRadius: 8,
+        borderTopEndRadius: 42,
         borderBottomWidth: 0.4,
         borderLeftWidth: 0.8,
         borderColor: '#798899'
