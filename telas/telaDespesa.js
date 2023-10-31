@@ -1,19 +1,19 @@
 import { Select } from 'native-base';
 import { View, Text, StyleSheet } from 'react-native';
-import { Avatar, TextInput } from 'react-native-paper';
+import { Avatar, Button, TextInput } from 'react-native-paper';
 
 const TelaDespesa = () => {
     return (
         <View style={styles.container}>
 
             <View style={[styles.telaSuperior]}>
-             <Text style={{ color: '#fff', fontSize: 20, marginLeft: 24, marginTop: 40 }}>PoupCerto</Text>
+                <Text style={{ color: '#fff', fontSize: 20, marginLeft: 24, marginTop: 40 }}>PoupCerto</Text>
                 <View style={styles.telaDespesaValor}>
                     <Text style={{ color: '#fff', fontSize: 18, marginLeft: 24, marginTop: 4 }}>Despesa:</Text>
-                     <View style={{flexDirection: 'row', alignItems: 'center'}}>
-                       <Text style={{ color: '#fff', fontSize: 32, marginLeft: 24, marginTop: 4 }}>R$: 645,00</Text>
-                       <Avatar.Icon size={28} color='#fff' backgroundColor='#003B45' icon="eye" />
-                     </View>
+                    <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+                        <Text style={{ color: '#fff', fontSize: 32, marginLeft: 24, marginTop: 4 }}>R$: 645,00</Text>
+                        <Avatar.Icon size={28} color='#fff' backgroundColor='#003B45' icon="eye" />
+                    </View>
                 </View>
             </View>
 
@@ -33,19 +33,23 @@ const TelaDespesa = () => {
                 <TextInput label="Descrição..." />
             </View>
 
+            <View style={styles.button}>
+                <Button icon="horse" mode="elevated" width={200} buttonColor='#AA0014' textColor='#fff' onPress={() => console.log('Pressed')}>Press me</Button>
+            </View >
+
             <View style={styles.menu}>
-                <View style={ styles.iconesMenu}>
+                <View style={styles.iconesMenu}>
                     <Avatar.Icon size={38} color='#798899' backgroundColor='#fff' icon="home" />
-                    <Text style={{color: '#798899'}}>Início</Text>
+                    <Text style={{ color: '#798899' }}>Início</Text>
                 </View>
-                    <Avatar.Icon size={90} color='#AA0014' backgroundColor='#fff' borderWidth={1} borderColor='#AA0014' icon="cash-plus" />
-                <View style={ styles.iconesMenu}>
+                <Avatar.Icon size={90} color='#AA0014' backgroundColor='#fff' borderWidth={1} borderColor='#AA0014' icon="cash-plus" />
+                <View style={styles.iconesMenu}>
                     <Avatar.Icon size={38} color='#798899' backgroundColor='#fff' icon="bug" />
-                    <Text style={{color: '#798899'}}>Sobre</Text>
+                    <Text style={{ color: '#798899' }}>Sobre</Text>
                 </View>
             </View>
 
-        </View>
+        </View >
     );
 }
 
@@ -93,12 +97,16 @@ const styles = StyleSheet.create({
         padding: 8,
     },
     descricao: {
-        flex: 1,
+        flex: 0.65,
         borderWidth: 4,
         borderColor: '#003B45',
         borderRadius: 4,
         padding: 4,
         margin: 12,
+    },
+    button: {
+        flex: 0.35,
+        alignItems: 'center',
     },
     menu: {
         flex: 0.32,
@@ -115,7 +123,7 @@ const styles = StyleSheet.create({
     },
     fontePadrao: {
         fontSize: 20,
-         color: '#fff'
+        color: '#fff'
     },
 });
 
