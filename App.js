@@ -8,3 +8,18 @@ export default function App() {
 
 // Icones
 // https://oblador.github.io/react-native-vector-icons/
+
+// Icones para o app
+ 
+// droga = cannabis
+// academia = dumbbell
+// presentes = gift 
+// lanche = pizza
+// viagem = road / earth
+// cigarro = smoking
+// uber = taxi
+// cinema = ticket
+// dentista = tooth
+// internet = wifi
+//  notebook = laptop
+//  
