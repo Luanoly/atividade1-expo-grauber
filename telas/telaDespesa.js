@@ -34,17 +34,17 @@ const TelaDespesa = () => {
             </View>
 
             <View style={styles.button}>
-                <Button icon="horse" mode="elevated" width={200} buttonColor='#AA0014' textColor='#fff' onPress={() => console.log('Pressed')}>Press me</Button>
+                <Button icon="horse" mode="elevated" width={200} buttonColor='#AA0014' textColor='#fff' onPress={() => console.log('Pressed')}>Adicionar</Button>
             </View >
 
             <View style={styles.menu}>
                 <View style={styles.iconesMenu}>
-                    <Avatar.Icon size={38} color='#798899' backgroundColor='#fff' icon="home" />
+                    <Avatar.Icon size={32} color='#798899' backgroundColor='#fff' icon="home" />
                     <Text style={{ color: '#798899' }}>Início</Text>
                 </View>
-                <Avatar.Icon size={90} color='#AA0014' backgroundColor='#fff' borderWidth={1} borderColor='#AA0014' icon="cash-plus" />
+                <Avatar.Icon size={80} color='#AA0014' backgroundColor='#fff' borderWidth={1} borderColor='#AA0014' icon="cash-plus" />
                 <View style={styles.iconesMenu}>
-                    <Avatar.Icon size={38} color='#798899' backgroundColor='#fff' icon="bug" />
+                    <Avatar.Icon size={32} color='#798899' backgroundColor='#fff' icon="bug" />
                     <Text style={{ color: '#798899' }}>Sobre</Text>
                 </View>
             </View>
