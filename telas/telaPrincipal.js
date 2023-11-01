@@ -6,7 +6,12 @@ import { Icon, Avatar } from 'react-native-paper';
 /// Vai retornar as Depesa que vai estar na "flatlist"
 const Despesa = ({ categoria, valor }) => {
     return (
-        <Text style={styles.item}>{categoria} - {valor}</Text>
+        <View>
+            <View style={styles.registroHistorico}>
+                <Avatar.Icon size={54} color='#004B57' backgroundColor='#fff' icon="ambulance" />
+                <Text style={styles.fontePadrao}>{categoria} - R$: {valor}</Text>
+            </View>
+        </View>
     )
 }
 
@@ -40,49 +45,22 @@ const TelaInicial = () => {
                 <NativeBaseProvider>
                     <FlatList
                         data={[
-                            { categoria: 'Devin' },
-                            { categoria: 'Dan' },
-                            { categoria: 'Dominic' },
-                            { categoria: 'Jackson' },
-                            { categoria: 'James' },
-                            { categoria: 'Joel' },
-                            { categoria: 'John' },
-                            { categoria: 'Jillian' },
-                            { categoria: 'Jimmy' },
-                            { categoria: 'Julie' },
+                            { categoria: 'Farmácia', valor: '300,00' },
+                            { categoria: 'Mercado', valor: '36,00' },
+                            { categoria: 'Cartões', valor: '209,00' },
+                            { categoria: 'Outros', valor: '100,00' },
+                            { categoria: 'Transporte', valor: '50,49' },
+                            { categoria: 'Academia', valor: '89,90' },
+                            { categoria: 'Viagem', valor: '150,00' },
+                            { categoria: 'Cigarro', valor: '12,25' },
+                            { categoria: 'Cinema', valor: '45,00' },
+                            { categoria: 'Internet', valor: '120,00' },
                         ]}
-                        renderItem={({ item }) => <Despesa categoria={item.categoria} />}
+                        renderItem={({ item }) => <Despesa categoria={item.categoria} valor={item.valor} />}
                     />
                 </NativeBaseProvider>
             </View>
 
-            {/* <View style={styles.telaUltimoHistorico}>
-                <View style={styles.registroHistorico}>
-                    <Avatar.Icon size={54} color='#004B57' backgroundColor='#fff' icon="ambulance" />
-                    <Text style={styles.fontePadrao}>Farmácia</Text>
-                    <Text style={styles.fontePadrao}>R$: 300,00</Text>
-                </View>
-                <View style={styles.registroHistorico}>
-                    <Avatar.Icon size={54} color='#004B57' backgroundColor='#fff' icon="cart-arrow-down" />
-                    <Text style={styles.fontePadrao}>Mercado</Text>
-                    <Text style={styles.fontePadrao}>R$: 36,00</Text>
-                </View>
-                <View style={styles.registroHistorico}>
-                    <Avatar.Icon size={54} color='#004B57' backgroundColor='#fff' icon="credit-card" />
-                    <Text style={styles.fontePadrao}>Cartões</Text>
-                    <Text style={styles.fontePadrao}>R$: 209,00</Text>
-                </View>
-                <View style={styles.registroHistorico}>
-                    <Avatar.Icon size={54} color='#004B57' backgroundColor='#fff' icon="package" />
-                    <Text style={styles.fontePadrao}>Outros</Text>
-                    <Text style={styles.fontePadrao}>R$: 100,00</Text>
-                </View>
-                <View style={styles.registroHistorico}>
-                    <Avatar.Icon size={54} color='#004B57' backgroundColor='#fff' icon="bus" />
-                    <Text style={styles.fontePadrao}>Transporte</Text>
-                    <Text style={styles.fontePadrao}>R$: 0,00</Text>
-                </View>
-            </View> */}
 
             <View style={styles.menu}>
                 <View style={styles.iconesMenu}>
@@ -169,7 +147,8 @@ const styles = StyleSheet.create({
         borderTopEndRadius: 32,
         borderBottomWidth: 0.4,
         borderLeftWidth: 0.8,
-        borderColor: '#798899'
+        borderColor: '#798899',
+        marginTop: 10,
     },
     menu: {
         flex: 0.26,
@@ -192,3 +171,34 @@ const styles = StyleSheet.create({
 });
 
 export default TelaInicial;
+
+// Rascunho
+
+
+{/* <View style={styles.telaUltimoHistorico}>
+                <View style={styles.registroHistorico}>
+                    <Avatar.Icon size={54} color='#004B57' backgroundColor='#fff' icon="ambulance" />
+                    <Text style={styles.fontePadrao}>Farmácia</Text>
+                    <Text style={styles.fontePadrao}>R$: 300,00</Text>
+                </View>
+                <View style={styles.registroHistorico}>
+                    <Avatar.Icon size={54} color='#004B57' backgroundColor='#fff' icon="cart-arrow-down" />
+                    <Text style={styles.fontePadrao}>Mercado</Text>
+                    <Text style={styles.fontePadrao}>R$: 36,00</Text>
+                </View>
+                <View style={styles.registroHistorico}>
+                    <Avatar.Icon size={54} color='#004B57' backgroundColor='#fff' icon="credit-card" />
+                    <Text style={styles.fontePadrao}>Cartões</Text>
+                    <Text style={styles.fontePadrao}>R$: 209,00</Text>
+                </View>
+                <View style={styles.registroHistorico}>
+                    <Avatar.Icon size={54} color='#004B57' backgroundColor='#fff' icon="package" />
+                    <Text style={styles.fontePadrao}>Outros</Text>
+                    <Text style={styles.fontePadrao}>R$: 100,00</Text>
+                </View>
+                <View style={styles.registroHistorico}>
+                    <Avatar.Icon size={54} color='#004B57' backgroundColor='#fff' icon="bus" />
+                    <Text style={styles.fontePadrao}>Transporte</Text>
+                    <Text style={styles.fontePadrao}>R$: 0,00</Text>
+                </View>
+            </View> */}
