@@ -8,7 +8,7 @@ const Despesa = ({ categoria, valor }) => {
     return (
         <View>
             <View style={styles.registroHistorico}>
-                <Avatar.Icon size={54} color='#fff' backgroundColor='#378258' borderColor='#fff' borderWidth={1} icon="cart-arrow-down" />
+                <Avatar.Icon size={54} color='#fff' backgroundColor='#a94444' borderColor='#d79c9c' borderWidth={1} icon="cart-arrow-down" />
                 <Text style={styles.fontePadrao}>{categoria} - R$: {valor}</Text>
             </View>
         </View>
@@ -67,7 +67,7 @@ const TelaInicial = () => {
                     <Avatar.Icon size={32} color='#798899' backgroundColor='#fff' icon="home" />
                     <Text style={{ color: '#798899' }}>Início</Text>
                 </View>
-                <Avatar.Icon size={80} color='#AA0014' backgroundColor='#fff' borderWidth={1} borderColor='#AA0014' icon="cash-plus" />
+                <Avatar.Icon size={80} color='#cd5c5c' backgroundColor='#fff' borderWidth={1} borderColor='#cd5c5c' icon="cash-plus" />
                 <View style={styles.iconesMenu}>
                     <Avatar.Icon size={32} color='#798899' backgroundColor='#fff' icon="bug" />
                     <Text style={{ color: '#798899' }}>Sobre</Text>
@@ -138,7 +138,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#003B45'
     },
     registroHistorico: {
-        backgroundColor: '#004B57',
+        backgroundColor: '#cd5c5c',  /// https://encycolorpedia.pt/cd5c5c
         flexDirection: 'row',
         padding: 10,
         alignItems: 'center',
@@ -166,7 +166,7 @@ const styles = StyleSheet.create({
     /// Fonte padrão para texto
     fontePadrao: {
         fontSize: 20,
-        color: '#f0fff0'
+        color: '#f5f5f5'
     },
 });
 
