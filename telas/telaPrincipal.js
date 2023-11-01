@@ -1,6 +1,14 @@
+import { FlatList, NativeBaseProvider } from 'native-base';
 import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, StatusBar, Button } from 'react-native';
 import { Icon, Avatar } from 'react-native-paper';
+
+/// Vai retornar as Depesa que vai estar na "flatlist"
+const Despesa = ({ categoria, valor }) => {
+    return (
+        <Text style={styles.item}>{categoria} - {valor}</Text>
+    )
+}
 
 const TelaInicial = () => {
     return (
@@ -29,6 +37,26 @@ const TelaInicial = () => {
             </View>
 
             <View style={styles.telaUltimoHistorico}>
+                <NativeBaseProvider>
+                    <FlatList
+                        data={[
+                            { categoria: 'Devin' },
+                            { categoria: 'Dan' },
+                            { categoria: 'Dominic' },
+                            { categoria: 'Jackson' },
+                            { categoria: 'James' },
+                            { categoria: 'Joel' },
+                            { categoria: 'John' },
+                            { categoria: 'Jillian' },
+                            { categoria: 'Jimmy' },
+                            { categoria: 'Julie' },
+                        ]}
+                        renderItem={({ item }) => <Despesa categoria={item.categoria} />}
+                    />
+                </NativeBaseProvider>
+            </View>
+
+            {/* <View style={styles.telaUltimoHistorico}>
                 <View style={styles.registroHistorico}>
                     <Avatar.Icon size={54} color='#004B57' backgroundColor='#fff' icon="ambulance" />
                     <Text style={styles.fontePadrao}>Farmácia</Text>
@@ -54,7 +82,7 @@ const TelaInicial = () => {
                     <Text style={styles.fontePadrao}>Transporte</Text>
                     <Text style={styles.fontePadrao}>R$: 0,00</Text>
                 </View>
-            </View>
+            </View> */}
 
             <View style={styles.menu}>
                 <View style={styles.iconesMenu}>
