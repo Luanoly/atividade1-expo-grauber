@@ -8,7 +8,7 @@ const Despesa = ({ categoria, valor }) => {
     return (
         <View>
             <View style={styles.registroHistorico}>
-                <Avatar.Icon size={54} color='#004B57' backgroundColor='#fff' icon="ambulance" />
+                <Avatar.Icon size={54} color='#fff' backgroundColor='#378258' borderColor='#fff' borderWidth={1} icon="cart-arrow-down" />
                 <Text style={styles.fontePadrao}>{categoria} - R$: {valor}</Text>
             </View>
         </View>
@@ -166,7 +166,7 @@ const styles = StyleSheet.create({
     /// Fonte padrão para texto
     fontePadrao: {
         fontSize: 20,
-        color: '#fff'
+        color: '#f0fff0'
     },
 });
 
