@@ -3,7 +3,7 @@ import TelaPrincipal from './telas/telaPrincipal';
 import TelaDespesa from './telas/telaDespesa';
 
 export default function App() {
-  return <TelaDespesa />;
+  return <TelaPrincipal />;
 }
 
 // Icones

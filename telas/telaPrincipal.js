@@ -8,8 +8,8 @@ const Despesa = ({ categoria, valor }) => {
     return (
         <View>
             <View style={styles.registroHistorico}>
-                <Avatar.Icon size={54} color='#fff' backgroundColor='#a94444' borderColor='#d79c9c' borderWidth={1} icon="cart-arrow-down" />
-                <Text style={styles.fontePadrao}>{categoria} - R$: {valor}</Text>
+                {/* <Avatar.Icon size={54} color='#fff' backgroundColor='#004B57' borderColor='#fff' borderWidth={1} icon="cart-arrow-down" /> */}
+                <Text style={styles.fontePadrao}>{categoria} - R$ {valor}</Text>
             </View>
         </View>
     )
@@ -22,9 +22,9 @@ const TelaInicial = () => {
             <View style={[styles.telaSuperior]}>
                 <Text style={{ color: '#fff', fontSize: 20, marginLeft: 24, marginTop: 40 }}>PoupCerto</Text>
                 <View style={styles.telaDespesaValor}>
-                    <Text style={{ color: '#fff', fontSize: 18, marginLeft: 24, marginTop: 4 }}>Despesa:</Text>
+                    <Text style={{ color: '#fff', fontSize: 18, marginLeft: 24, marginTop: 4 }}>Despesas:</Text>
                     <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-                        <Text style={{ color: '#fff', fontSize: 32, marginLeft: 24, marginTop: 4 }}>R$: 645,00</Text>
+                        <Text style={{ color: '#fff', fontSize: 32, marginLeft: 24, marginTop: 4 }}>R$ 645,00</Text>
                         <Avatar.Icon size={28} color='#fff' backgroundColor='#003B45' icon="eye" />
                     </View>
                 </View>
@@ -43,6 +43,9 @@ const TelaInicial = () => {
 
             <View style={styles.telaUltimoHistorico}>
                 <NativeBaseProvider>
+                    <View style={{ backgroundColor: '#004B57', borderRadius: 4, width: 300, height: 32, alignItems:'center', marginLeft: 18, marginBottom: 10, borderColor: '#798899', borderWidth: 0.5 }}>
+                        <Text style={styles.fontePadrao}>Categorías</Text>
+                    </View>
                     <FlatList
                         data={[
                             { categoria: 'Farmácia', valor: '300,00' },
@@ -138,7 +141,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#003B45'
     },
     registroHistorico: {
-        backgroundColor: '#cd5c5c',  /// https://encycolorpedia.pt/cd5c5c
+        backgroundColor: '#004B57',  /// https://encycolorpedia.pt/cd5c5c
         flexDirection: 'row',
         padding: 10,
         alignItems: 'center',
