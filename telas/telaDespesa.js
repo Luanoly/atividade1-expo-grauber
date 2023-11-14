@@ -1,6 +1,8 @@
-import { Select } from 'native-base';
+import { Center, Select } from 'native-base';
+import React, { useState } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
-import { Avatar, Button, TextInput } from 'react-native-paper';
+import { Avatar, Button, SegmentedButtons, TextInput } from 'react-native-paper';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 const TelaDespesa = () => {
     return (
@@ -18,14 +20,12 @@ const TelaDespesa = () => {
             </View>
 
             <View style={styles.inserirDespesa}>
-                <View style={{ padding: 4, alignItems: 'center', }}>
+                <View style={{ padding: 4, marginLeft: 8 }}>
                     <Text style={{ fontSize: 24, color: 'white' }}>Inserir Despesa</Text>
+                    <TextInput label="01/01/2023" />
                 </View>
-                <View sytle={styles.atributosDespesas}>
-                    <View style={styles.colunaDespesaUm}>
-                        <TextInput label="R$: 00,00" />
-                        <Text>Categorías</Text>
-                    </View>
+                <View style={{ padding: 4, marginLeft: 8 }}>
+                    <Text style={{ fontSize: 24, color: 'white' }}>Categorías</Text>
                 </View>
             </View>
 
@@ -89,13 +89,6 @@ const styles = StyleSheet.create({
         borderRadius: 4,
         padding: 10,
         margin: 8,
-    },
-    atributosDespesas: {
-        alignItems: 'stretch',
-    },
-    colunaDespesaUm: {
-        width: 180,
-        padding: 8,
     },
     descricao: {
         flex: 0.65,

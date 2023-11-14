@@ -43,8 +43,8 @@ const TelaInicial = () => {
 
             <View style={styles.telaUltimoHistorico}>
                 <NativeBaseProvider>
-                    <View style={{ backgroundColor: '#004B57', borderRadius: 4, width: 300, height: 32, alignItems:'center', marginLeft: 18, marginBottom: 10, borderColor: '#798899', borderWidth: 0.5 }}>
-                        <Text style={styles.fontePadrao}>Categorías</Text>
+                    <View style={{ backgroundColor: '#004B57', borderRadius: 4, width: 300, height: 32, alignItems: 'center', marginLeft: 18, marginBottom: 10, borderColor: '#798899', borderWidth: 0.5 }}>
+                        <Text style={styles.fontePadrao}>Histórico</Text>
                     </View>
                     <FlatList
                         data={[
@@ -174,34 +174,3 @@ const styles = StyleSheet.create({
 });
 
 export default TelaInicial;
-
-// Rascunho
-
-
-{/* <View style={styles.telaUltimoHistorico}>
-                <View style={styles.registroHistorico}>
-                    <Avatar.Icon size={54} color='#004B57' backgroundColor='#fff' icon="ambulance" />
-                    <Text style={styles.fontePadrao}>Farmácia</Text>
-                    <Text style={styles.fontePadrao}>R$: 300,00</Text>
-                </View>
-                <View style={styles.registroHistorico}>
-                    <Avatar.Icon size={54} color='#004B57' backgroundColor='#fff' icon="cart-arrow-down" />
-                    <Text style={styles.fontePadrao}>Mercado</Text>
-                    <Text style={styles.fontePadrao}>R$: 36,00</Text>
-                </View>
-                <View style={styles.registroHistorico}>
-                    <Avatar.Icon size={54} color='#004B57' backgroundColor='#fff' icon="credit-card" />
-                    <Text style={styles.fontePadrao}>Cartões</Text>
-                    <Text style={styles.fontePadrao}>R$: 209,00</Text>
-                </View>
-                <View style={styles.registroHistorico}>
-                    <Avatar.Icon size={54} color='#004B57' backgroundColor='#fff' icon="package" />
-                    <Text style={styles.fontePadrao}>Outros</Text>
-                    <Text style={styles.fontePadrao}>R$: 100,00</Text>
-                </View>
-                <View style={styles.registroHistorico}>
-                    <Avatar.Icon size={54} color='#004B57' backgroundColor='#fff' icon="bus" />
-                    <Text style={styles.fontePadrao}>Transporte</Text>
-                    <Text style={styles.fontePadrao}>R$: 0,00</Text>
-                </View>
-            </View> */}

@@ -1,9 +1,9 @@
 import React from 'react';
-import TelaPrincipal from './telas/telaPrincipal';
 import TelaDespesa from './telas/telaDespesa';
+import TelaInicial from './telas/telaPrincipal';
 
 export default function App() {
-  return <TelaPrincipal />;
+  return <TelaDespesa />;
 }
 
 // Icones
@@ -11,7 +11,6 @@ export default function App() {
 
 // Icones para o app
  
-// droga = cannabis
 // academia = dumbbell
 // presentes = gift 
 // lanche = pizza
