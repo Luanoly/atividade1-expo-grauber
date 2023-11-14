@@ -1,8 +1,5 @@
-import { Center, Select } from 'native-base';
-import React, { useState } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
-import { Avatar, Button, SegmentedButtons, TextInput } from 'react-native-paper';
-import { SafeAreaView } from 'react-native-safe-area-context';
+import { Avatar, Button, TextInput } from 'react-native-paper';
 
 const TelaDespesa = () => {
     return (
