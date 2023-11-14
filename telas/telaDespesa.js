@@ -19,10 +19,21 @@ const TelaDespesa = () => {
             <View style={styles.inserirDespesa}>
                 <View style={{ padding: 4, marginLeft: 8 }}>
                     <Text style={{ fontSize: 24, color: 'white' }}>Inserir Despesa</Text>
-                    <TextInput label="01/01/2023" />
+                    <TextInput label="01/02/2023" />
                 </View>
-                <View style={{ padding: 4, marginLeft: 8 }}>
-                    <Text style={{ fontSize: 24, color: 'white' }}>Categorías</Text>
+                <View style={{ padding: 4, marginLeft: 8, }}>
+                    <TextInput label="Categorias \/" />
+                </View>
+                <View style={{ alignItems: 'stretch', flexDirection: 'row', justifyContent: 'space-evenly' }}>
+                    <Text style={{ fontSize: 24, color: 'white' }}>R$</Text>
+                    <TextInput width={280} label="100,00" />
+                </View>
+                <View style={{ flexDirection: 'row', marginTop: 14, justifyContent: 'space-between' }}>
+                    <Button mode="outlined" buttonColor='#004B57' onPress={() => console.log('Pressed')} textColor='#fff'>+1</Button>
+                    <Button mode="outlined" buttonColor='#004B57' onPress={() => console.log('Pressed')} textColor='#fff'>+2</Button>
+                    <Button mode="outlined" buttonColor='#004B57' onPress={() => console.log('Pressed')} textColor='#fff'>+5</Button>
+                    <Button mode="outlined" buttonColor='#004B57' onPress={() => console.log('Pressed')} textColor='#fff'>+10</Button>
+                    <Button mode="outlined" buttonColor='#004B57' onPress={() => console.log('Pressed')} textColor='#fff'>+50</Button>
                 </View>
             </View>
 
@@ -31,7 +42,7 @@ const TelaDespesa = () => {
             </View>
 
             <View style={styles.button}>
-                <Button icon="horse" mode="elevated" width={200} buttonColor='#AA0014' textColor='#fff' onPress={() => console.log('Pressed')}>Adicionar</Button>
+                <Button contentStyle={{ height: 54 }} mode="elevated" width={200} buttonColor='#003B45' textColor='#fff' onPress={() => console.log('Pressed')}>Adicionar</Button>
             </View >
 
             <View style={styles.menu}>
