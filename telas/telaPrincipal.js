@@ -1,7 +1,7 @@
 import { FlatList, NativeBaseProvider } from 'native-base';
 import React from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, StatusBar, Button } from 'react-native';
-import { Icon, Avatar } from 'react-native-paper';
+import { View, Text, StyleSheet } from 'react-native';
+import { Avatar } from 'react-native-paper';
 
 /// Vai retornar as Depesa que vai estar na "flatlist"
 const Despesa = ({ categoria, valor }) => {
