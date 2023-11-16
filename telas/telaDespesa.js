@@ -65,7 +65,7 @@ const styles = StyleSheet.create({
     // View principal não mexer
     container: {
         flex: 1,
-        backgroundColor: 'white',
+        backgroundColor: '#fff',
     },
     telaSuperior: {
         flex: 1.1,
