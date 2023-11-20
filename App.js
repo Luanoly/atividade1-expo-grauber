@@ -4,7 +4,7 @@ import TelaDespesa from './telas/telaDespesa';
 import TelaHistorico from './telas/telaHistorico';
 
 export default function App() {
-  return <TelaInicial />;
+  return <TelaHistorico />;
 }
 
 // Icones
