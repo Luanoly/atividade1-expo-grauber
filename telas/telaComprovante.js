@@ -52,8 +52,6 @@ const styles = StyleSheet.create({
     },
     informacao: {
         flex: 0.5,
-        borderColor: 'red',
-        borderWidth: 1,
         margin: 24,
         padding: 8,
         justifyContent: "space-evenly",
