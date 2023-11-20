@@ -8,8 +8,8 @@ const Despesa = ({ categoria, valor }) => {
     return (
         <View>
             <View style={styles.registroHistorico}>
-                {/* <Avatar.Icon size={54} color='#fff' backgroundColor='#004B57' borderColor='#fff' borderWidth={1} icon="cart-arrow-down" /> */}
-                <Text style={styles.fontePadrao}>{categoria} - R$ {valor}</Text>
+                <Avatar.Icon size={54} color='#004B57' backgroundColor='#A1DCE5' icon="cart-arrow-down" />
+                <Text style={styles.fonteHistorico}>{categoria}   R$ {valor}</Text>
             </View>
         </View>
     )
@@ -43,8 +43,8 @@ const TelaInicial = () => {
 
             <View style={styles.telaUltimoHistorico}>
                 <NativeBaseProvider>
-                    <View style={{ backgroundColor: '#004B57', borderRadius: 4, width: 300, height: 32, alignItems: 'center', marginLeft: 18, marginBottom: 10, borderColor: '#798899', borderWidth: 0.5 }}>
-                        <Text style={styles.fontePadrao}>Histórico</Text>
+                    <View style={{ backgroundColor: '#fff',width: 300, height: 32, alignItems: 'center', marginLeft: 18, marginBottom: 10, }}>
+                        <Text style={styles.fonteHistorico}>Histórico</Text>
                     </View>
                     <FlatList
                         data={[
@@ -131,26 +131,21 @@ const styles = StyleSheet.create({
         borderLeftWidth: 0.8,
     },
     telaUltimoHistorico: {
-        flex: 1.6,
-        borderWidth: 12,
-        borderColor: '#004B57',
-        borderRadius: 4,
+        flex: 2,
         padding: 10,
         margin: 8,
         justifyContent: 'space-around',
-        backgroundColor: '#003B45'
+        backgroundColor: '#fff'
     },
     registroHistorico: {
-        backgroundColor: '#004B57',  /// https://encycolorpedia.pt/cd5c5c
+        backgroundColor: '#A1DCE5',
         flexDirection: 'row',
         padding: 10,
         alignItems: 'center',
         height: 64,
         justifyContent: 'space-around',
-        borderTopEndRadius: 32,
-        borderBottomWidth: 0.4,
-        borderLeftWidth: 0.8,
         borderColor: '#798899',
+        borderRadius: 8,
         marginTop: 10,
     },
     menu: {
@@ -170,6 +165,10 @@ const styles = StyleSheet.create({
     fontePadrao: {
         fontSize: 20,
         color: '#f5f5f5'
+    },
+    fonteHistorico: {
+        fontSize: 20,
+        color: '#003B45'
     },
 });
 
