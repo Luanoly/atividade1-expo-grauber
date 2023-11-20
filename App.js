@@ -2,9 +2,10 @@ import React from 'react';
 import TelaInicial from './telas/telaPrincipal';
 import TelaDespesa from './telas/telaDespesa';
 import TelaHistorico from './telas/telaHistorico';
+import TelaComprovante from './telas/telaComprovante';
 
 export default function App() {
-  return <TelaHistorico />;
+  return <TelaComprovante />;
 }
 
 // Icones
@@ -21,5 +22,5 @@ export default function App() {
 // cinema = ticket
 // dentista = tooth
 // internet = wifi
-//  notebook = laptop
+// notebook = laptop
 //  
