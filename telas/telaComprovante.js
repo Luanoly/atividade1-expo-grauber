@@ -2,19 +2,19 @@ import { StyleSheet, Text, View } from "react-native"
 import { Avatar } from "react-native-paper";
 
 const TelaComprovante = () => {
-    return(
+    return (
         <View style={styles.container}>
             <View style={styles.parteSuperior}>
-                    <Avatar.Icon size={28} icon="chevron-left"/>
-                    <Text>PoupCerto</Text>
+                <Avatar.Icon size={28} icon="chevron-left" />
+                <Text>PoupCerto</Text>
             </View>
 
             <View style={styles.informacao}>
-                <Avatar.Icon size={90} icon={"gift"} />
-                    <View>
-                        <Text style={styles.informacaoProduto}>Shopping</Text>
-                        <Text style={styles.informacaoProduto}>20/11/2023</Text>
-                    </View>
+                <Avatar.Icon size={90} backgroundColor={'#A1DCE5'} icon={"gift"} />
+                <View>
+                    <Text style={styles.informacaoProduto}>Shopping</Text>
+                    <Text style={styles.informacaoProduto}>20/11/2023</Text>
+                </View>
             </View>
 
             <View style={styles.descricao}>
@@ -26,7 +26,7 @@ const TelaComprovante = () => {
                     <Avatar.Icon size={32} color='#798899' backgroundColor='#fff' icon="home" />
                     <Text style={{ color: '#798899' }}>Início</Text>
                 </View>
-                <Avatar.Icon size={80} color='#AA0014' backgroundColor='#fff'  borderWidth={1} borderColor='#AA0014' icon="cash-plus" />
+                <Avatar.Icon size={80} color='#AA0014' backgroundColor='#fff' borderWidth={1} borderColor='#AA0014' icon="cash-plus" />
                 <View style={styles.iconesMenu}>
                     <Avatar.Icon size={32} color='#798899' backgroundColor='#fff' icon="bug" />
                     <Text style={{ color: '#798899' }}>Sobre</Text>
@@ -44,7 +44,7 @@ const styles = StyleSheet.create({
     parteSuperior: {
         flex: 0.4,
         backgroundColor: '#004B57',
-        flexDirection:'row',
+        flexDirection: 'row',
         padding: 12,
         alignItems: 'center',
         justifyContent: 'flex-start',
