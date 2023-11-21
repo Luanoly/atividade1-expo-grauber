@@ -1,7 +1,8 @@
 import { FlatList, NativeBaseProvider } from 'native-base';
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, Pressable } from 'react-native';
 import { Avatar } from 'react-native-paper';
+import TelaHistorico from './telaHistorico';
 
 /// Vai retornar as Depesa que vai estar na "flatlist"
 const Despesa = ({ categoria, valor }) => {
@@ -15,7 +16,7 @@ const Despesa = ({ categoria, valor }) => {
     )
 }
 
-const TelaInicial = () => {
+const TelaInicial = ({ navigation }) => {
     return (
         <View style={styles.container}>
 
@@ -32,8 +33,10 @@ const TelaInicial = () => {
 
             <View style={styles.telaInicial}>
                 <View style={styles.componenteInicial}>
-                    <Text style={styles.fontePadrao}>Histórico</Text>
-                    <Avatar.Icon size={66} backgroundColor='#004B57' icon="file-document-multiple-outline" />
+                    <Pressable onPress={() => navigation.navigate('Historico')}>
+                        <Text style={styles.fontePadrao}>Histórico</Text>
+                        <Avatar.Icon size={66} backgroundColor='#004B57' icon="file-document-multiple-outline" />
+                    </Pressable>
                 </View>
                 <View style={styles.componenteInicial}>
                     <Text style={styles.fontePadrao}>Cofre</Text>
@@ -43,7 +46,7 @@ const TelaInicial = () => {
 
             <View style={styles.telaUltimoHistorico}>
                 <NativeBaseProvider>
-                    <View style={{ backgroundColor: '#fff',width: 300, height: 32, alignItems: 'center', marginLeft: 18, marginBottom: 10, }}>
+                    <View style={{ backgroundColor: '#fff', width: 300, height: 32, alignItems: 'center', marginLeft: 18, marginBottom: 10, }}>
                         <Text style={styles.fonteHistorico}>Histórico</Text>
                     </View>
                     <FlatList
