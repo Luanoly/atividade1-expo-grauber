@@ -12,10 +12,9 @@ function App() {
   return (
     <NavigationContainer>
         <Stack.Navigator initialRouteName="Home">
-          <Stack.Screen name="Home" options={{ title: 'PoupCerto' }} component={TelaInicial} />
-          <Stack.Screen name="Despesa" options={{ title: 'PoupCerto' }} component={TelaDespesa} />
-          <Stack.Screen name="Historico" options={{ title: 'PoupCerto' }} component={TelaHistorico} />
-          <Stack.Screen name="Comprovante" options={{ title: 'PoupCerto' }} component={TelaComprovante} />
+          <Stack.Screen name="Home" options={{ title: 'PoupCerto', headerShown: false }} component={TelaInicial} />
+          <Stack.Screen name="Historico" options={{ title: 'Histórico' }} component={TelaHistorico} />
+          <Stack.Screen name="Comprovante" options={{ title: 'Comprovante' }} component={TelaComprovante} />
         </Stack.Navigator>
     </NavigationContainer>
   );
