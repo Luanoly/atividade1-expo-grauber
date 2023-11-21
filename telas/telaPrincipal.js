@@ -73,7 +73,7 @@ const TelaInicial = ({ navigation }) => {
                     <Avatar.Icon size={32} color='#798899' backgroundColor='#fff' icon="home" />
                     <Text style={{ color: '#798899' }}>Início</Text>
                 </View>
-                <Avatar.Icon size={80} color='#cd5c5c' backgroundColor='#fff' borderWidth={1} borderColor='#cd5c5c' icon="cash-plus" />
+                <Avatar.Icon size={80} color='#AA3514' backgroundColor='#fff' borderWidth={1} borderColor='#AA3514' icon="cash-plus" />
                 <View style={styles.iconesMenu}>
                     <Avatar.Icon size={32} color='#798899' backgroundColor='#fff' icon="bug" />
                     <Text style={{ color: '#798899' }}>Sobre</Text>
