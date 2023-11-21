@@ -4,10 +4,6 @@ import { Avatar } from "react-native-paper";
 const TelaComprovante = () => {
     return (
         <View style={styles.container}>
-            <View style={styles.parteSuperior}>
-                <Avatar.Icon size={28} icon="chevron-left" />
-                <Text>PoupCerto</Text>
-            </View>
 
             <View style={styles.informacao}>
                 <Avatar.Icon size={90} backgroundColor={'#A1DCE5'} icon={"gift"} />

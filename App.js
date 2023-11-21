@@ -12,8 +12,8 @@ function App() {
   return (
     <NavigationContainer>
         <Stack.Navigator initialRouteName="Home">
-          <Stack.Screen name="Home" options={{ title: 'PoupCerto', headerShown: false }} component={TelaPrincipal} />
-          <Stack.Screen name="Historico" options={{ title: 'Histórico' }} component={TelaHistorico} />
+          {/* <Stack.Screen name="Home" options={{ title: 'PoupCerto', headerShown: false }} component={TelaPrincipal} /> */}
+          {/* <Stack.Screen name="Historico" options={{ title: 'Histórico' }} component={TelaHistorico} /> */}
           <Stack.Screen name="Comprovante" options={{ title: 'Comprovante' }} component={TelaComprovante} />
         </Stack.Navigator>
     </NavigationContainer>
