@@ -35,12 +35,12 @@ const TelaInicial = ({ navigation }) => {
                 <View style={styles.componenteInicial}>
                     <Pressable onPress={() => navigation.navigate('Historico')}>
                         <Text style={styles.fontePadrao}>Histórico</Text>
-                        <Avatar.Icon size={66} backgroundColor='#004B57' icon="file-document-multiple-outline" />
+                        <Avatar.Icon size={62} backgroundColor='#004B57' icon="file-document-multiple-outline" />
                     </Pressable>
                 </View>
                 <View style={styles.componenteInicial}>
                     <Text style={styles.fontePadrao}>Cofre</Text>
-                    <Avatar.Icon size={66} backgroundColor='#004B57' icon="piggy-bank-outline" />
+                    <Avatar.Icon size={62} backgroundColor='#004B57' icon="piggy-bank-outline" />
                 </View>
             </View>
 
@@ -152,7 +152,7 @@ const styles = StyleSheet.create({
         marginTop: 10,
     },
     menu: {
-        flex: 0.26,
+        flex: 0.28,
         borderTopWidth: 0.5,
         borderColor: '#798899',
         backgroundColor: '#fff',

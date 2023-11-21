@@ -18,10 +18,6 @@ const TelaHistorico = () => {
     return (
         <View style={styles.container}>
 
-                <View style={styles.parteSuperior}>
-                    <Avatar.Icon size={28} icon="chevron-left"/>
-                    <Text>PoupCerto</Text>
-                </View>
 
             <View style={styles.filtro}>
                 <View style={styles.periodoHistorico}>
@@ -29,8 +25,8 @@ const TelaHistorico = () => {
                     <Text style={styles.fontePadrao}>Período inicial</Text>
                 </View>
                 <View style={styles.periodoHistorico}>
-                    <TextInput label={"01/11/2023"}/>
-                    <TextInput label={"20/11/2023"}/>
+                    <TextInput label={"01/11/2023"} />
+                    <TextInput label={"20/11/2023"} />
                 </View>
                 <View style={styles.periodoHistorico}>
                     <Button contentStyle={{ height: 40 }} mode="elevated" width={154} buttonColor='#AA3514' textColor='#fff' onPress={() => console.log('Pressed')}>Últimos 30 dias</Button>
@@ -38,13 +34,13 @@ const TelaHistorico = () => {
                 </View>
                 <View style={styles.periodoCategoria}>
                     <Text style={styles.fontePadrao}>Filtrar por categoría</Text>
-                    <TextInput label={"Categoría"}/>
+                    <TextInput label={"Categoría"} />
                 </View>
             </View>
 
             <View style={styles.telaUltimoHistorico}>
                 <NativeBaseProvider>
-                    <View style={{ backgroundColor: '#fff',width: 300, height: 32, alignItems: 'center', marginLeft: 18, marginBottom: 10, }}>
+                    <View style={{ backgroundColor: '#fff', width: 300, height: 32, alignItems: 'center', marginLeft: 18, marginBottom: 10, }}>
                         <Text style={styles.fonteHistorico}>Histórico</Text>
                     </View>
                     <FlatList
@@ -70,7 +66,7 @@ const TelaHistorico = () => {
                     <Avatar.Icon size={32} color='#798899' backgroundColor='#fff' icon="home" />
                     <Text style={{ color: '#798899' }}>Início</Text>
                 </View>
-                <Avatar.Icon size={80} color='#AA0014' backgroundColor='#fff'  borderWidth={1} borderColor='#AA0014' icon="cash-plus" />
+                <Avatar.Icon size={80} color='#AA0014' backgroundColor='#fff' borderWidth={1} borderColor='#AA0014' icon="cash-plus" />
                 <View style={styles.iconesMenu}>
                     <Avatar.Icon size={32} color='#798899' backgroundColor='#fff' icon="bug" />
                     <Text style={{ color: '#798899' }}>Sobre</Text>
@@ -85,15 +81,6 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: '#fff',
-    },
-    parteSuperior: {
-        flex: 0.4,
-        backgroundColor: '#004B57',
-        flexDirection:'row',
-        padding: 12,
-        alignItems: 'center',
-        justifyContent: 'flex-start',
-        marginBottom: 8
     },
     filtro: {
         flex: 1.4,
