@@ -22,7 +22,7 @@ const TelaHistorico = () => {
             <View style={styles.filtro}>
                 <View style={styles.periodoHistorico}>
                     <Text style={styles.fontePadrao}>Período inicial</Text>
-                    <Text style={styles.fontePadrao}>Período inicial</Text>
+                    <Text style={styles.fontePadrao}>Período Final</Text>
                 </View>
                 <View style={styles.periodoHistorico}>
                     <TextInput label={"01/11/2023"} />

@@ -1,6 +1,6 @@
 import { FlatList, NativeBaseProvider } from 'native-base';
-import React from 'react';
-import { View, Text, StyleSheet, Pressable } from 'react-native';
+import React, { useEffect, useState } from 'react';
+import { View, Text, StyleSheet, Pressable, ActivityIndicator } from 'react-native';
 import { Avatar } from 'react-native-paper';
 import TelaHistorico from './telaHistorico';
 
@@ -17,6 +17,26 @@ const Despesa = ({ categoria, valor }) => {
 }
 
 const TelaInicial = ({ navigation }) => {
+
+    const [isLoading, setLoading] = useState(true);
+    const [despesas, setDespesas] = useState([]);
+
+    const getDespesas = async () => {
+        try {
+            const response = await fetch('ttps://projeto-nestjs-financas-onrender.com');
+            const json = await response.json
+            setDespesas(json);
+        } catch (error) {
+            console.error(error);
+        } finally {
+            setLoading(false);
+        }
+    };
+
+    useEffect(() => {
+        getDespesas();
+    }, []);
+
     return (
         <View style={styles.container}>
 
@@ -49,21 +69,13 @@ const TelaInicial = ({ navigation }) => {
                     <View style={{ backgroundColor: '#fff', width: 300, height: 32, alignItems: 'center', marginLeft: 18, marginBottom: 10, }}>
                         <Text style={styles.fonteHistorico}>Histórico</Text>
                     </View>
-                    <FlatList
-                        data={[
-                            { categoria: 'Farmácia', valor: '300,00' },
-                            { categoria: 'Mercado', valor: '36,00' },
-                            { categoria: 'Cartões', valor: '209,00' },
-                            { categoria: 'Outros', valor: '100,00' },
-                            { categoria: 'Transporte', valor: '50,49' },
-                            { categoria: 'Academia', valor: '89,90' },
-                            { categoria: 'Viagem', valor: '150,00' },
-                            { categoria: 'Cigarro', valor: '12,25' },
-                            { categoria: 'Cinema', valor: '45,00' },
-                            { categoria: 'Internet', valor: '120,00' },
-                        ]}
-                        renderItem={({ item }) => <Despesa categoria={item.categoria} valor={item.valor} />}
-                    />
+                    {isLoading ? (
+                        <ActivityIndicator />
+                    ) : (
+                        <FlatList
+                            data={[despesas]}
+                            renderItem={({ item }) => <Despesa categoria={item.categoria} valor={item.valor} />}
+                        />)}
                 </NativeBaseProvider>
             </View>
 
