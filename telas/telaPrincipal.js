@@ -9,7 +9,7 @@ const Despesa = ({ categoria, valor }) => {
     return (
         <View>
             <View style={styles.registroHistorico}>
-                <Avatar.Icon size={54} color='#004B57' backgroundColor='#A1DCE5' icon="cart-arrow-down" />
+                {/* <Avatar.Icon size={54} color='#004B57' backgroundColor='#A1DCE5' icon="cart-arrow-down" /> */}
                 <Text style={styles.fonteHistorico}>{categoria}   R$ {valor}</Text>
             </View>
         </View>
