@@ -66,7 +66,7 @@ const TelaInicial = ({ navigation }) => {
 
             <View style={styles.telaUltimoHistorico}>
                 <NativeBaseProvider>
-                    <View style={{ backgroundColor: '#fff', width: 300, height: 32, alignItems: 'center', marginLeft: 18, marginBottom: 10, }}>
+                    <View style={{ backgroundColor: '#fff', width: 300, height: 32, alignItems: 'center', marginLeft: 32, marginBottom: 10, }}>
                         <Text style={styles.fonteHistorico}>Histórico</Text>
                     </View>
                     {isLoading ? (
