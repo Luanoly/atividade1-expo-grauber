@@ -23,8 +23,8 @@ const TelaInicial = ({ navigation }) => {
 
     const getDespesas = async () => {
         try {
-            const response = await fetch('ttps://projeto-nestjs-financas-onrender.com');
-            const json = await response.json
+            const response = await fetch('https://projeto-nestjs-financas.onrender.com/despesas');
+            const json = await response.json();
             setDespesas(json);
         } catch (error) {
             console.error(error);
@@ -73,7 +73,7 @@ const TelaInicial = ({ navigation }) => {
                         <ActivityIndicator />
                     ) : (
                         <FlatList
-                            data={[despesas]}
+                            data={despesas}
                             renderItem={({ item }) => <Despesa categoria={item.categoria} valor={item.valor} />}
                         />)}
                 </NativeBaseProvider>
