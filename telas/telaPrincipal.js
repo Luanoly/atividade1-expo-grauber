@@ -20,6 +20,12 @@ const TelaInicial = ({ navigation }) => {
 
     const [isLoading, setLoading] = useState(true);
     const [despesas, setDespesas] = useState([]);
+    const [totalDespesas, setTotalDespesas] = useState(0);
+
+    const calcularDespesas = () => {
+        const soma = despesas.reduce((a, b) => a + Number(b.valor), 0);
+        return soma;
+    }
 
     const getDespesas = async () => {
         try {
@@ -35,6 +41,7 @@ const TelaInicial = ({ navigation }) => {
 
     useEffect(() => {
         getDespesas();
+        setTotalDespesas(calcularDespesas());
     }, []);
 
     return (
@@ -45,7 +52,12 @@ const TelaInicial = ({ navigation }) => {
                 <View style={styles.telaDespesaValor}>
                     <Text style={{ color: '#fff', fontSize: 18, marginLeft: 24, marginTop: 4 }}>Despesas:</Text>
                     <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-                        <Text style={{ color: '#fff', fontSize: 32, marginLeft: 24, marginTop: 4 }}>R$ 645,00</Text>
+                        <Text style={{ color: '#fff', fontSize: 32, marginLeft: 24, marginTop: 4 }}>
+                            {totalDespesas.toLocaleString("pt-BR", {
+                                style: "currency",
+                                currency: "BRL",
+                            })}
+                        </Text>
                         <Avatar.Icon size={28} color='#fff' backgroundColor='#003B45' icon="eye" />
                     </View>
                 </View>
