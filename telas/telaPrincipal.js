@@ -58,7 +58,7 @@ const TelaInicial = ({ navigation }) => {
                                 currency: "BRL",
                             })}
                         </Text>
-                        <Avatar.Icon size={28} color='#fff' backgroundColor='#003B45' icon="eye" />
+                        {/* <Avatar.Icon size={28} color='#fff' backgroundColor='#003B45' icon="eye" /> */}
                     </View>
                 </View>
             </View>
