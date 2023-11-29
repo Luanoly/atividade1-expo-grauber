@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { View, Text, StyleSheet, Pressable, ActivityIndicator } from 'react-native';
 import { Avatar } from 'react-native-paper';
 import TelaHistorico from './telaHistorico';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 /// Vai retornar as Depesa que vai estar na "flatlist"
 const Despesa = ({ categoria, valor }) => {
@@ -16,7 +17,9 @@ const Despesa = ({ categoria, valor }) => {
     )
 }
 
-const TelaInicial = ({ navigation }) => {
+const Tab = createBottomTabNavigator();
+
+const TelaPrincipal = ({ navigation }) => {
 
     const [isLoading, setLoading] = useState(true);
     const [despesas, setDespesas] = useState([]);
@@ -92,7 +95,7 @@ const TelaInicial = ({ navigation }) => {
             </View>
 
 
-            <View style={styles.menu}>
+            {/* <View style={styles.menu}>
                 <View style={styles.iconesMenu}>
                     <Avatar.Icon size={32} color='#798899' backgroundColor='#fff' icon="home" />
                     <Text style={{ color: '#798899' }}>Início</Text>
@@ -102,8 +105,11 @@ const TelaInicial = ({ navigation }) => {
                     <Avatar.Icon size={32} color='#798899' backgroundColor='#fff' icon="bug" />
                     <Text style={{ color: '#798899' }}>Sobre</Text>
                 </View>
-            </View>
+            </View> */}
 
+            <Tab.Navigator>
+                <Tab.Screen name="Principal" component={TelaPrincipal} />
+            </Tab.Navigator>
         </View>
     );
 }
@@ -199,4 +205,4 @@ const styles = StyleSheet.create({
     },
 });
 
-export default TelaInicial;
+export default TelaPrincipal;
