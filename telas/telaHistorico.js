@@ -36,7 +36,7 @@ const TelaHistorico = () => {
                     <Text style={styles.fontePadrao}>Filtrar por categoría</Text>
                     <View style={{ flexDirection: 'row', padding: 8, width: 372, justifyContent: 'space-around', height: 56 }}>
                         <TextInput label={"Categoría"} />
-                        <Button contentStyle={{ height: 40 }} mode="elevated" width={154} buttonColor='#AA3514' textColor='#fff' onPress={() => console.log('Pressed')} >Filtrar</Button>
+                        <Button contentStyle={{ height: 40 }} mode="elevated" width={154} buttonColor='#296891' textColor='#fff' onPress={() => console.log('Pressed')} >Filtrar</Button>
                     </View>
                 </View>
             </View>
