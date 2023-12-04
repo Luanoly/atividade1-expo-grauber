@@ -1,17 +1,60 @@
+import { NativeBaseProvider } from 'native-base';
+import { useEffect, useState } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
-import { Avatar, Button, TextInput } from 'react-native-paper';
+import { ActivityIndicator, Avatar, Button, TextInput } from 'react-native-paper';
+
+
 
 const TelaDespesa = () => {
+
+    const [isLoading, setLoading] = useState(true);
+    const [despesas, setDespesas] = useState([]);
+    const [totalDespesas, setTotalDespesas] = useState(0);
+
+    const calcularDespesas = () => {
+        const soma = despesas.reduce((a, b) => a + Number(b.valor), 0);
+        return soma;
+    }
+
+    const getDespesas = async () => {
+        try {
+            const response = await fetch('https://projeto-nestjs-financas.onrender.com/despesas');
+            const json = await response.json();
+            setDespesas(json);
+            setTotalDespesas(json.reduce((a, b) => a + Number(b.valor), 0));
+        } catch (error) {
+            console.error(error);
+        } finally {
+            setLoading(false);
+        }
+    };
+
+    useEffect(() => {
+        getDespesas();
+    }, []);
+
     return (
         <View style={styles.container}>
 
             <View style={[styles.telaSuperior]}>
                 <Text style={{ color: '#fff', fontSize: 20, marginLeft: 24, marginTop: 40 }}>PoupCerto</Text>
                 <View style={styles.telaDespesaValor}>
-                    <Text style={{ color: '#fff', fontSize: 18, marginLeft: 24, marginTop: 4 }}>Despesa:</Text>
+                    <Text style={{ color: '#fff', fontSize: 18, marginLeft: 24, marginTop: 4 }}>Despesas:</Text>
                     <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-                        <Text style={{ color: '#fff', fontSize: 32, marginLeft: 24, marginTop: 4 }}>R$: 645,00</Text>
-                        <Avatar.Icon size={28} color='#fff' backgroundColor='#003B45' icon="eye" />
+                        <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+                            <NativeBaseProvider>
+                                {isLoading ? (
+                                    <ActivityIndicator />
+                                ) : (
+                                    <Text style={{ color: '#fff', fontSize: 32, marginLeft: 24, marginTop: 4 }}>
+                                        {totalDespesas.toLocaleString("pt-BR", {
+                                            style: "currency",
+                                            currency: "BRL",
+                                        })}
+                                    </Text>
+                                )}
+                            </NativeBaseProvider>
+                        </View>
                     </View>
                 </View>
             </View>
@@ -45,18 +88,6 @@ const TelaDespesa = () => {
                 <Button contentStyle={{ height: 54 }} mode="elevated" width={200} buttonColor='#003B45' textColor='#fff' onPress={() => console.log('Pressed')}>Adicionar</Button>
             </View >
 
-            <View style={styles.menu}>
-                <View style={styles.iconesMenu}>
-                    <Avatar.Icon size={32} color='#798899' backgroundColor='#fff' icon="home" />
-                    <Text style={{ color: '#798899' }}>Início</Text>
-                </View>
-                <Avatar.Icon size={80} color='#AA0014' backgroundColor='#fff' borderWidth={1} borderColor='#AA0014' icon="cash-plus" />
-                <View style={styles.iconesMenu}>
-                    <Avatar.Icon size={32} color='#798899' backgroundColor='#fff' icon="bug" />
-                    <Text style={{ color: '#798899' }}>Sobre</Text>
-                </View>
-            </View>
-
         </View >
     );
 }
@@ -68,7 +99,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#fff',
     },
     telaSuperior: {
-        flex: 1.1,
+        flex: 1.05,
         flexDirection: 'row',
         justifyContent: 'space-around',
         alignItems: 'center',

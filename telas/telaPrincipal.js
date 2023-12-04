@@ -35,6 +35,7 @@ const TelaPrincipal = ({ navigation }) => {
             const response = await fetch('https://projeto-nestjs-financas.onrender.com/despesas');
             const json = await response.json();
             setDespesas(json);
+            setTotalDespesas(json.reduce((a, b) => a + Number(b.valor), 0));
         } catch (error) {
             console.error(error);
         } finally {
@@ -44,7 +45,6 @@ const TelaPrincipal = ({ navigation }) => {
 
     useEffect(() => {
         getDespesas();
-        setTotalDespesas(calcularDespesas());
     }, []);
 
     return (
@@ -55,18 +55,23 @@ const TelaPrincipal = ({ navigation }) => {
                 <View style={styles.telaDespesaValor}>
                     <Text style={{ color: '#fff', fontSize: 18, marginLeft: 24, marginTop: 4 }}>Despesas:</Text>
                     <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-                        <Text style={{ color: '#fff', fontSize: 32, marginLeft: 24, marginTop: 4 }}>
-                            {totalDespesas.toLocaleString("pt-BR", {
-                                style: "currency",
-                                currency: "BRL",
-                            })}
-                        </Text>
-                        {/* <Avatar.Icon size={28} color='#fff' backgroundColor='#003B45' icon="eye" /> */}
+                        <NativeBaseProvider>
+                            {isLoading ? (
+                                <ActivityIndicator />
+                            ) : (
+                                <Text style={{ color: '#fff', fontSize: 32, marginLeft: 24, marginTop: 4 }}>
+                                    {totalDespesas.toLocaleString("pt-BR", {
+                                        style: "currency",
+                                        currency: "BRL",
+                                    })}
+                                </Text>
+                            )}
+                        </NativeBaseProvider>
                     </View>
                 </View>
             </View>
 
-            <View style={styles.telaInicial}>
+            {/* <View style={styles.telaInicial}>
                 <View style={styles.componenteInicial}>
                     <Pressable onPress={() => navigation.navigate('Historico')}>
                         <Text style={styles.fontePadrao}>Histórico</Text>
@@ -77,12 +82,12 @@ const TelaPrincipal = ({ navigation }) => {
                     <Text style={styles.fontePadrao}>Cofre</Text>
                     <Avatar.Icon size={62} backgroundColor='#004B57' icon="piggy-bank-outline" />
                 </View>
-            </View>
+            </View> */}
 
             <View style={styles.telaUltimoHistorico}>
                 <NativeBaseProvider>
                     <View style={{ backgroundColor: '#fff', width: 300, height: 32, alignItems: 'center', marginLeft: 32, marginBottom: 10, }}>
-                        <Text style={styles.fonteHistorico}>Histórico</Text>
+                        <Text style={styles.fonteHistorico}>Últimos Registros</Text>
                     </View>
                     {isLoading ? (
                         <ActivityIndicator />
@@ -93,23 +98,6 @@ const TelaPrincipal = ({ navigation }) => {
                         />)}
                 </NativeBaseProvider>
             </View>
-
-
-            {/* <View style={styles.menu}>
-                <View style={styles.iconesMenu}>
-                    <Avatar.Icon size={32} color='#798899' backgroundColor='#fff' icon="home" />
-                    <Text style={{ color: '#798899' }}>Início</Text>
-                </View>
-                <Avatar.Icon size={80} color='#AA3514' backgroundColor='#fff' borderWidth={1} borderColor='#AA3514' icon="cash-plus" />
-                <View style={styles.iconesMenu}>
-                    <Avatar.Icon size={32} color='#798899' backgroundColor='#fff' icon="bug" />
-                    <Text style={{ color: '#798899' }}>Sobre</Text>
-                </View>
-            </View> */}
-
-            <Tab.Navigator>
-                <Tab.Screen name="Principal" component={TelaPrincipal} />
-            </Tab.Navigator>
         </View>
     );
 }
@@ -121,7 +109,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#fff',
     },
     telaSuperior: {
-        flex: 0.9,
+        flex: 0.75,
         flexDirection: 'row',
         justifyContent: 'space-around',
         alignItems: 'center',
