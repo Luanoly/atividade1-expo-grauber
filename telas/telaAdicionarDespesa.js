@@ -1,7 +1,7 @@
 import { NativeBaseProvider } from 'native-base';
 import { useEffect, useState } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
-import { ActivityIndicator, Avatar, Button, TextInput } from 'react-native-paper';
+import { ActivityIndicator, Button, TextInput } from 'react-native-paper';
 
 
 
@@ -60,16 +60,16 @@ const TelaDespesa = () => {
             </View>
 
             <View style={styles.inserirDespesa}>
-                <View style={{ padding: 4, marginLeft: 8 }}>
+                <View style={{ padding: 4, marginLeft: 8, alignItems: 'center' }}>
                     <Text style={{ fontSize: 24, color: 'white' }}>Inserir Despesa</Text>
-                    <TextInput label="01/02/2023" />
+                    <TextInput label="01/02/2023" style={{ width: 280, borderRadius: 8 }} />
                 </View>
-                <View style={{ padding: 4, marginLeft: 8, }}>
-                    <TextInput label="Categorias \/" />
+                <View style={{ padding: 4, marginLeft: 8, alignItems: 'center' }}>
+                    <TextInput label="Categorias \/" style={{ width: 280, borderRadius: 8 }} />
                 </View>
-                <View style={{ alignItems: 'stretch', flexDirection: 'row', justifyContent: 'space-evenly' }}>
-                    <Text style={{ fontSize: 24, color: 'white' }}>R$</Text>
-                    <TextInput width={280} label="100,00" />
+                <View style={{ alignItems: 'stretch', flexDirection: 'row', justifyContent: 'flex-start', alignItems: 'center' }}>
+                    <Text style={{ fontSize: 24, color: 'white', marginLeft: 6, paddingRight: 8 }}>R$</Text>
+                    <TextInput width={280} label="100,00" style={{ width: 280, borderRadius: 8 }} />
                 </View>
                 <View style={{ flexDirection: 'row', marginTop: 14, justifyContent: 'space-between' }}>
                     <Button mode="outlined" buttonColor='#004B57' onPress={() => console.log('Pressed')} textColor='#fff'>+1</Button>
@@ -81,7 +81,7 @@ const TelaDespesa = () => {
             </View>
 
             <View style={styles.descricao}>
-                <TextInput label="Descrição..." />
+                <TextInput label="Descrição..." style={{ height: 130, borderRadius: 8, backgroundColor: '#fff' }} />
             </View>
 
             <View style={styles.button}>
