@@ -29,7 +29,7 @@ function App() {
       }}>
         <Tab.Screen name="Home" component={TelaPrincipal} options={{ title: 'Principal', headerShown: false }}/>
         <Tab.Screen name="Adicionar" component={TelaAdicionarDespesa} options={{ title: 'Adicionar', headerShown: false }} />
-        <Tab.Screen name="Historico" component={TelaHistorico} options={{ title: 'Pesquisar por data e categoria'}}/>
+        <Tab.Screen name="Historico" component={TelaHistorico} options={{ title: 'Histórico' }}/>
       </Tab.Navigator>
       )
     };
