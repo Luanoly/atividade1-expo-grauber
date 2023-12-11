@@ -3,6 +3,7 @@ import TelaPrincipal from './telas/telaPrincipal';
 import TelaAdicionarDespesa from './telas/telaAdicionarDespesa';
 import TelaHistorico from './telas/telaHistorico';
 import TelaComprovante from './telas/telaComprovante';
+import TelaLogin from './telas/telaLogin';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
@@ -13,8 +14,9 @@ const Tab = createBottomTabNavigator();
 function App() {
   return (
     <NavigationContainer>
-        <Stack.Navigator>
-          <Stack.Screen name="Home" options={{ title: 'PoupCerto', headerShown: false }} component={MenuInferior} />
+        <Stack.Navigator screenOptions={{headerShown: false}}>
+          <Stack.Screen name="TelaLogin" options={{ title: 'Login' }} component={TelaLogin} />
+          <Stack.Screen name="Home" options={{ title: 'PoupCerto' }} component={MenuInferior} />
           <Stack.Screen name="Comprovante" options={{ title: 'Comprovante' }} component={TelaComprovante} />
         </Stack.Navigator>
     </NavigationContainer>
