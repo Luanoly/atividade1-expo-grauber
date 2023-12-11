@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View } from "react-native"
 import { Button, TextInput } from "react-native-paper";
 
-const TelaLogin = () => {
+const TelaLogin = ({ navigation }) => {
     return (
         <View style={styles.container}>
             <View style={styles.background}>
@@ -9,7 +9,7 @@ const TelaLogin = () => {
                     <Text style={{ color: '#f5f5f5', fontSize: 24, marginBottom: 16 }}>PoupCerto</Text>
                     <TextInput width={260} label="E-mail" style={{ borderRadius: 8, marginBottom: 8 }} ></TextInput>
                     <TextInput width={260} label="Senha" style={{ borderRadius: 8, marginBottom: 8 }} ></TextInput>
-                    <Button mode="elevated" buttonColor='#004B57' onPress={() => console.log('Pressed')} textColor='#fff'>Entrar</Button>
+                    <Button mode="elevated" buttonColor='#004B57' onPress={() => navigation.navigate('MenuInferior')} textColor='#fff'>Entrar</Button>
                 </View>
             </View>
         </View>
