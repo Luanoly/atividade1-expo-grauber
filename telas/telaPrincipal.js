@@ -8,13 +8,17 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 /// Vai retornar as Depesa que vai estar na "flatlist"
 const Despesa = ({ categoria, valor }) => {
     return (
-        <View>
+        <Pressable onPress={detalhes}>
             <View style={styles.registroHistorico}>
                 {/* <Avatar.Icon size={54} color='#004B57' backgroundColor='#A1DCE5' icon="cart-arrow-down" /> */}
                 <Text style={styles.fonteHistorico}>{categoria}   R$ {valor}</Text>
             </View>
-        </View>
+        </Pressable>
     )
+}
+
+function detalhes() {
+
 }
 
 const Tab = createBottomTabNavigator();
@@ -70,19 +74,6 @@ const TelaPrincipal = ({ navigation }) => {
                     </View>
                 </View>
             </View>
-
-            {/* <View style={styles.telaInicial}>
-                <View style={styles.componenteInicial}>
-                    <Pressable onPress={() => navigation.navigate('Historico')}>
-                        <Text style={styles.fontePadrao}>Histórico</Text>
-                        <Avatar.Icon size={62} backgroundColor='#004B57' icon="file-document-multiple-outline" />
-                    </Pressable>
-                </View>
-                <View style={styles.componenteInicial}>
-                    <Text style={styles.fontePadrao}>Cofre</Text>
-                    <Avatar.Icon size={62} backgroundColor='#004B57' icon="piggy-bank-outline" />
-                </View>
-            </View> */}
 
             <View style={styles.telaUltimoHistorico}>
                 <NativeBaseProvider>

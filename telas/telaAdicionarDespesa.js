@@ -1,8 +1,9 @@
 import { NativeBaseProvider } from 'native-base';
 import { useEffect, useState } from 'react';
-import { View, Text, StyleSheet } from 'react-native';
-import { ActivityIndicator, Button, TextInput } from 'react-native-paper';
-
+import { View, Text, StyleSheet, Pressable, Modal } from 'react-native';
+import { ActivityIndicator, Avatar, Button, TextInput } from 'react-native-paper';
+import DateTimePicker from 'react-native-ui-datepicker';
+import dayjs from 'dayjs';
 
 
 const TelaDespesa = () => {
@@ -10,6 +11,8 @@ const TelaDespesa = () => {
     const [isLoading, setLoading] = useState(true);
     const [despesas, setDespesas] = useState([]);
     const [totalDespesas, setTotalDespesas] = useState(0);
+    const [visibleCalender, setVisibleCalender] = useState(false)
+    const [valueDate, setValueDate] = useState()
 
     const calcularDespesas = () => {
         const soma = despesas.reduce((a, b) => a + Number(b.valor), 0);
@@ -32,6 +35,37 @@ const TelaDespesa = () => {
     useEffect(() => {
         getDespesas();
     }, []);
+
+    const dayJS = dayjs()
+
+    function Calendario() {
+        if (!visibleCalender) {
+            return (
+                <Pressable onPress={() => setVisibleCalender(true)} style={{ backgroundColor: '#fff', padding: 10, borderRadius: 8, width: 280, alignItems: 'center' }}>
+                    <Text>
+                        Calendario
+                    </Text>
+                </Pressable>
+            )
+        }
+        return (
+            <Modal visible={visibleCalender} >
+                <Pressable onPress={() => setVisibleCalender(false)} style={{ position: "absolute", right: 10, top: 10 }}>
+                    <Avatar.Icon icon={"close"} style={{ backgroundColor: "white" }} />
+                </Pressable>
+                <View style={{ backgroundColor: "white", position: "relative", top: "25%" }}>
+                    <View>
+                        <DateTimePicker
+                            value={dayJS}
+                            onValueChange={(date) => setValueDate()} />
+                    </View>
+                </View>
+            </Modal>
+        )
+    }
+
+
+
 
     return (
         <View style={styles.container}>
@@ -62,14 +96,14 @@ const TelaDespesa = () => {
             <View style={styles.inserirDespesa}>
                 <View style={{ padding: 4, marginLeft: 8, alignItems: 'center' }}>
                     <Text style={{ fontSize: 24, color: 'white' }}>Inserir Despesa</Text>
-                    <TextInput label="01/02/2023" style={{ width: 280, borderRadius: 8 }} />
+                    <Calendario />
                 </View>
                 <View style={{ padding: 4, marginLeft: 8, alignItems: 'center' }}>
-                    <TextInput label="Categorias \/" style={{ width: 280, borderRadius: 8 }} />
+                    <TextInput label="Categorias \/" style={{ width: 280, borderRadius: 8, backgroundColor: '#fff' }} />
                 </View>
                 <View style={{ alignItems: 'stretch', flexDirection: 'row', justifyContent: 'flex-start', alignItems: 'center' }}>
                     <Text style={{ fontSize: 24, color: 'white', marginLeft: 6, paddingRight: 8 }}>R$</Text>
-                    <TextInput width={280} label="100,00" style={{ width: 280, borderRadius: 8 }} />
+                    <TextInput width={280} label="100,00" style={{ width: 280, borderRadius: 8, backgroundColor: '#fff' }} />
                 </View>
                 <View style={{ flexDirection: 'row', marginTop: 14, justifyContent: 'space-between' }}>
                     <Button mode="outlined" buttonColor='#004B57' onPress={() => console.log('Pressed')} textColor='#fff'>+1</Button>
