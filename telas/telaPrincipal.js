@@ -11,7 +11,7 @@ const Despesa = ({ categoria, valor }) => {
         <Pressable onPress={detalhes}>
             <View style={styles.registroHistorico}>
                 {/* <Avatar.Icon size={54} color='#004B57' backgroundColor='#A1DCE5' icon="cart-arrow-down" /> */}
-                <Text style={styles.fonteHistorico}>{categoria}   R$ {valor}</Text>
+                <Text style={styles.fonteHistorico}>{categoria}   R${valor}</Text>
             </View>
         </Pressable>
     )
@@ -36,7 +36,9 @@ const TelaPrincipal = ({ navigation }) => {
 
     const getDespesas = async () => {
         try {
-            const response = await fetch('https://projeto-nestjs-financas.onrender.com/despesas');
+            // const response = await fetch('https://projeto-nestjs-financas.onrender.com/despesas');
+            const response = await fetch('http://10.220.30.122:3000/despesas');
+
             const json = await response.json();
             setDespesas(json);
             setTotalDespesas(json.reduce((a, b) => a + Number(b.valor), 0));

@@ -33,7 +33,8 @@ const TelaDespesa = () => {
     const getDespesas = async () => {
         try {
 
-            const response = await fetch('https://projeto-nestjs-financas.onrender.com/despesas');
+            // const response = await fetch('https://projeto-nestjs-financas.onrender.com/despesas');
+            const response = await fetch('http://10.220.30.122:3000/despesas')
             const json = await response.json();
             setDespesas(json);
             setTotalDespesas(json.reduce((a, b) => a + Number(b.valor), 0));
@@ -46,15 +47,16 @@ const TelaDespesa = () => {
 
     const sendDespesa = async () => {
         try {
-            console.log(despesaToSend);
+            // console.log(despesaToSend);
+            // console.log(JSON.stringify(despesaToSend));
             const response = await fetch('http://10.220.30.122:3000/despesas', {
                 method: "POST",
-                body: despesaToSend
+                headers: { 'Content-type': 'application/json' },
+                body: JSON.stringify(despesaToSend)
             });
             const json = await response.json();
             console.log(json);
-            setDespesas(json);
-            setTotalDespesas(json.reduce((a, b) => a + Number(b.valor), 0));
+            // setTotalDespesas(json.reduce((a, b) => a + Number(b.valor), 0));
         } catch (error) {
             console.error(error);
         } finally {
@@ -73,7 +75,7 @@ const TelaDespesa = () => {
             return (
                 <Pressable onPress={() => setVisibleCalender(true)} style={{ backgroundColor: '#fff', padding: 10, borderRadius: 8, width: 280, alignItems: 'center' }}>
                     <Text>
-                        Calendario
+                        Selecionar data
                     </Text>
                 </Pressable>
             )
@@ -87,7 +89,11 @@ const TelaDespesa = () => {
                     <View>
                         <DateTimePicker
                             value={dayJS}
-                            onValueChange={(date) => setValueDate(date)} />
+                            onValueChange={(date) => {
+                                // console.log('typeof = ' + typeof (date));
+                                // console.log(date.substring(0, 10));
+                                setValueDate(date.substring(0, 10));
+                            }} />
                     </View>
                 </View>
             </Modal>
@@ -125,10 +131,10 @@ const TelaDespesa = () => {
 
             <View style={styles.inserirDespesa}>
                 <View style={{ padding: 4, marginLeft: 8, alignItems: 'center' }}>
-                    <Text style={{ fontSize: 24, color: 'white' }}>Inserir Despesa</Text>
+                    <Text style={{ fontSize: 24, color: 'white', paddingBottom: 8 }}>Cadastrar despesa</Text>
                     <Calendario />
                 </View>
-                <View style={{ padding: 4, marginLeft: 8, alignItems: 'center' }}>
+                <View style={{ padding: 4, marginLeft: 8, alignItems: 'center', paddingTop: 8 }}>
                     <View style={{ backgroundColor: "white", borderRadius: 8 }}>
 
                         <Picker
@@ -136,27 +142,24 @@ const TelaDespesa = () => {
                             selectedValue={categoria}
                             onValueChange={(itemValue, itemIndex) => setCategoria(itemValue)}
                         >
+                            <Picker.Item label="Outros" value="Outros" />
                             <Picker.Item label="Cartão" value="Cartão" />
                             <Picker.Item label="Farmácia" value="Farmácia" />
                             <Picker.Item label="Transporte" value="Transporte" />
                             <Picker.Item label="Mercado" value="Mercado" />
-                            <Picker.Item label="Outros" value="Outros" />
-
-
                         </Picker>
                     </View>
                 </View>
-                <View style={{ alignItems: 'stretch', flexDirection: 'row', justifyContent: 'flex-start', alignItems: 'center' }}>
+                <View style={{ alignItems: 'stretch', flexDirection: 'row', justifyContent: 'flex-start', alignItems: 'center', paddingTop: 8 }}>
                     <Text style={{ fontSize: 24, color: 'white', marginLeft: 6, paddingRight: 8 }}>R$</Text>
-                    <TextInput onChangeText={(valor) => setValor(valor)} width={280} label="100,00" style={{ width: 280, borderRadius: 8, backgroundColor: '#fff' }} />
+                    <TextInput onChangeText={(valor) => setValor(valor)} width={280} placeholder='Inserir valor' style={{ width: 280, borderRadius: 8, backgroundColor: '#fff' }} />
                 </View>
-                {/* <View style={{ flexDirection: 'row', marginTop: 14, justifyContent: 'space-between' }}>
+                <View style={{ flexDirection: 'row', marginTop: 28, justifyContent: 'space-around' }}>
                     <Button mode="outlined" buttonColor='#004B57' onPress={() => console.log('Pressed')} textColor='#fff'>+1</Button>
-                    <Button mode="outlined" buttonColor='#004B57' onPress={() => console.log('Pressed')} textColor='#fff'>+2</Button>
-                    <Button mode="outlined" buttonColor='#004B57' onPress={() => console.log('Pressed')} textColor='#fff'>+5</Button>
                     <Button mode="outlined" buttonColor='#004B57' onPress={() => console.log('Pressed')} textColor='#fff'>+10</Button>
                     <Button mode="outlined" buttonColor='#004B57' onPress={() => console.log('Pressed')} textColor='#fff'>+50</Button>
-                </View> */}
+                    <Button mode="outlined" buttonColor='#004B57' onPress={() => console.log('Pressed')} textColor='#fff'>+100</Button>
+                </View>
             </View>
 
             <View style={styles.descricao}>
