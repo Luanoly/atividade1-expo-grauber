@@ -11,7 +11,11 @@ const Despesa = ({ categoria, valor }) => {
         <Pressable onPress={detalhes}>
             <View style={styles.registroHistorico}>
                 {/* <Avatar.Icon size={54} color='#004B57' backgroundColor='#A1DCE5' icon="cart-arrow-down" /> */}
-                <Text style={styles.fonteHistorico}>{categoria}   R${valor}</Text>
+                <Text style={styles.fonteHistorico}>{categoria}   R${valor.toLocaleString("pt-BR", {
+                    style: "currency",
+                    currency: "BRL",
+                })}
+                </Text>
             </View>
         </Pressable>
     )
