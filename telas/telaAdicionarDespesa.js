@@ -4,6 +4,7 @@ import { View, Text, StyleSheet, Pressable, Modal } from 'react-native';
 import { ActivityIndicator, Avatar, Button, TextInput } from 'react-native-paper';
 import DateTimePicker from 'react-native-ui-datepicker';
 import dayjs from 'dayjs';
+import { Picker } from '@react-native-picker/picker';
 
 
 const TelaDespesa = () => {
@@ -13,6 +14,16 @@ const TelaDespesa = () => {
     const [totalDespesas, setTotalDespesas] = useState(0);
     const [visibleCalender, setVisibleCalender] = useState(false)
     const [valueDate, setValueDate] = useState()
+    const [categoria, setCategoria] = useState()
+    const [valor, setValor] = useState()
+    console.log("date", valueDate);
+
+    const despesaToSend = {
+        data: valueDate,
+        categoria: categoria,
+        valor: valor,
+        descricao: ""
+    }
 
     const calcularDespesas = () => {
         const soma = despesas.reduce((a, b) => a + Number(b.valor), 0);
@@ -21,8 +32,27 @@ const TelaDespesa = () => {
 
     const getDespesas = async () => {
         try {
+
             const response = await fetch('https://projeto-nestjs-financas.onrender.com/despesas');
             const json = await response.json();
+            setDespesas(json);
+            setTotalDespesas(json.reduce((a, b) => a + Number(b.valor), 0));
+        } catch (error) {
+            console.error(error);
+        } finally {
+            setLoading(false);
+        }
+    };
+
+    const sendDespesa = async () => {
+        try {
+            console.log(despesaToSend);
+            const response = await fetch('http://10.220.30.122:3000/despesas', {
+                method: "POST",
+                body: despesaToSend
+            });
+            const json = await response.json();
+            console.log(json);
             setDespesas(json);
             setTotalDespesas(json.reduce((a, b) => a + Number(b.valor), 0));
         } catch (error) {
@@ -57,7 +87,7 @@ const TelaDespesa = () => {
                     <View>
                         <DateTimePicker
                             value={dayJS}
-                            onValueChange={(date) => setValueDate()} />
+                            onValueChange={(date) => setValueDate(date)} />
                     </View>
                 </View>
             </Modal>
@@ -99,27 +129,42 @@ const TelaDespesa = () => {
                     <Calendario />
                 </View>
                 <View style={{ padding: 4, marginLeft: 8, alignItems: 'center' }}>
-                    <TextInput label="Categorias \/" style={{ width: 280, borderRadius: 8, backgroundColor: '#fff' }} />
+                    <View style={{ backgroundColor: "white", borderRadius: 8 }}>
+
+                        <Picker
+                            style={{ width: 280, borderRadius: 8 }}
+                            selectedValue={categoria}
+                            onValueChange={(itemValue, itemIndex) => setCategoria(itemValue)}
+                        >
+                            <Picker.Item label="Cartão" value="Cartão" />
+                            <Picker.Item label="Farmácia" value="Farmácia" />
+                            <Picker.Item label="Transporte" value="Transporte" />
+                            <Picker.Item label="Mercado" value="Mercado" />
+                            <Picker.Item label="Outros" value="Outros" />
+
+
+                        </Picker>
+                    </View>
                 </View>
                 <View style={{ alignItems: 'stretch', flexDirection: 'row', justifyContent: 'flex-start', alignItems: 'center' }}>
                     <Text style={{ fontSize: 24, color: 'white', marginLeft: 6, paddingRight: 8 }}>R$</Text>
-                    <TextInput width={280} label="100,00" style={{ width: 280, borderRadius: 8, backgroundColor: '#fff' }} />
+                    <TextInput onChangeText={(valor) => setValor(valor)} width={280} label="100,00" style={{ width: 280, borderRadius: 8, backgroundColor: '#fff' }} />
                 </View>
-                <View style={{ flexDirection: 'row', marginTop: 14, justifyContent: 'space-between' }}>
+                {/* <View style={{ flexDirection: 'row', marginTop: 14, justifyContent: 'space-between' }}>
                     <Button mode="outlined" buttonColor='#004B57' onPress={() => console.log('Pressed')} textColor='#fff'>+1</Button>
                     <Button mode="outlined" buttonColor='#004B57' onPress={() => console.log('Pressed')} textColor='#fff'>+2</Button>
                     <Button mode="outlined" buttonColor='#004B57' onPress={() => console.log('Pressed')} textColor='#fff'>+5</Button>
                     <Button mode="outlined" buttonColor='#004B57' onPress={() => console.log('Pressed')} textColor='#fff'>+10</Button>
                     <Button mode="outlined" buttonColor='#004B57' onPress={() => console.log('Pressed')} textColor='#fff'>+50</Button>
-                </View>
+                </View> */}
             </View>
 
             <View style={styles.descricao}>
-                <TextInput label="Descrição..." style={{ height: 130, borderRadius: 8, backgroundColor: '#fff' }} />
+                <TextInput onChangeText={(text) => despesaToSend.descricao = text} label="Descrição..." style={{ height: 130, borderRadius: 8, backgroundColor: '#fff' }} />
             </View>
 
             <View style={styles.button}>
-                <Button contentStyle={{ height: 54 }} mode="elevated" width={200} buttonColor='#003B45' textColor='#fff' onPress={() => console.log('Pressed')}>Adicionar</Button>
+                <Button contentStyle={{ height: 54 }} mode="elevated" width={200} buttonColor='#003B45' textColor='#fff' onPress={() => sendDespesa()}>Adicionar</Button>
             </View >
 
         </View >
