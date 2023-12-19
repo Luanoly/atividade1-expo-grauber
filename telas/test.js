@@ -28,7 +28,7 @@ describe('TelaDespesa Component', () => {
         // Esperando a chamada da função
         await waitFor(() => {
             expect(fetchMock).toHaveBeenCalledWith(
-                'http://10.220.30.122:3000/despesas',
+                'https://projeto-nestjs-financas.onrender.com/despesas',
                 expect.objectContaining({
                     method: 'POST',
                     body: JSON.stringify({

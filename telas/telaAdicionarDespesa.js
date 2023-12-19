@@ -34,8 +34,7 @@ const TelaDespesa = () => {
     const getDespesas = async () => {
         try {
 
-            // const response = await fetch('https://projeto-nestjs-financas.onrender.com/despesas');
-            const response = await fetch('http://10.220.30.122:3000/despesas')
+            const response = await fetch('https://projeto-nestjs-financas.onrender.com/despesas');
             const json = await response.json();
             setDespesas(json);
             setTotalDespesas(json.reduce((a, b) => a + Number(b.valor), 0));
@@ -50,7 +49,7 @@ const TelaDespesa = () => {
         try {
             // console.log(despesaToSend);
             // console.log(JSON.stringify(despesaToSend));
-            const response = await fetch('http://10.220.30.122:3000/despesas', {
+            const response = await fetch('https://projeto-nestjs-financas.onrender.com/despesas', {
                 method: "POST",
                 headers: { 'Content-type': 'application/json' },
                 body: JSON.stringify(despesaToSend)
