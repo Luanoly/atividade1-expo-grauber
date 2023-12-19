@@ -15,6 +15,7 @@ const TelaDespesa = () => {
     const [visibleCalender, setVisibleCalender] = useState(false)
     const [valueDate, setValueDate] = useState()
     const [categoria, setCategoria] = useState()
+    const [atualizarLista, setAtualizarLIsta] = useState(new Date())
     const [valor, setValor] = useState()
     console.log("date", valueDate);
 
@@ -57,6 +58,7 @@ const TelaDespesa = () => {
             const json = await response.json();
             console.log(json);
             // setTotalDespesas(json.reduce((a, b) => a + Number(b.valor), 0));
+            setAtualizarLIsta(new Date());
         } catch (error) {
             console.error(error);
         } finally {
@@ -66,7 +68,7 @@ const TelaDespesa = () => {
 
     useEffect(() => {
         getDespesas();
-    }, []);
+    }, [atualizarLista]);
 
     const dayJS = dayjs()
 
