@@ -4,11 +4,13 @@ import { View, Text, StyleSheet, Pressable, ActivityIndicator } from 'react-nati
 import { Avatar } from 'react-native-paper';
 import TelaHistorico from './telaHistorico';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { useFocusEffect } from '@react-navigation/native';
 
 /// Vai retornar as Depesa que vai estar na "flatlist"
 const Despesa = ({ categoria, valor }) => {
     return (
         <Pressable onPress={detalhes}>
+            
             <View style={styles.registroHistorico}>
                 {/* <Avatar.Icon size={54} color='#004B57' backgroundColor='#A1DCE5' icon="cart-arrow-down" /> */}
                 <Text style={styles.fonteHistorico}>{categoria}   R${valor.toLocaleString("pt-BR", {
@@ -40,17 +42,31 @@ const TelaPrincipal = ({ navigation }) => {
 
     const getDespesas = async () => {
         try {
-            const response = await fetch('https://projeto-nestjs-financas.onrender.com/despesas');
+            const response = await fetch(`${process.env.EXPO_PUBLIC_URL_DEV}/despesas`);
 
             const json = await response.json();
-            setDespesas(json);
-            setTotalDespesas(json.reduce((a, b) => a + Number(b.valor), 0));
+            console.log(json)
+
+            if(Array.isArray(json) && json.length > 0){
+                setDespesas(json);
+                setTotalDespesas(json.reduce((a, b) => a + Number(b.valor), 0));
+            } else{
+            }
+
         } catch (error) {
             console.error(error);
         } finally {
             setLoading(false);
         }
     };
+
+
+
+  useFocusEffect( () => {
+      getDespesas()
+  }
+  );
+
 
     useEffect(() => {
         getDespesas();
@@ -89,6 +105,7 @@ const TelaPrincipal = ({ navigation }) => {
                         <ActivityIndicator />
                     ) : (
                         <FlatList
+                            inverted={true}
                             data={despesas}
                             renderItem={({ item }) => <Despesa categoria={item.categoria} valor={item.valor} />}
                         />)}

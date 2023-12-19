@@ -17,8 +17,10 @@ const TelaDespesa = () => {
     const [categoria, setCategoria] = useState()
     const [atualizarLista, setAtualizarLIsta] = useState(new Date())
     const [valor, setValor] = useState()
-    console.log("date", valueDate);
+    console.log(atualizarLista);
 
+
+    
     const despesaToSend = {
         data: valueDate,
         categoria: categoria,
@@ -31,10 +33,11 @@ const TelaDespesa = () => {
         return soma;
     }
 
+
+
     const getDespesas = async () => {
         try {
-
-            const response = await fetch('https://projeto-nestjs-financas.onrender.com/despesas');
+            const response = await fetch(`${process.env.EXPO_PUBLIC_URL_DEV}/despesas`);
             const json = await response.json();
             setDespesas(json);
             setTotalDespesas(json.reduce((a, b) => a + Number(b.valor), 0));
@@ -47,9 +50,7 @@ const TelaDespesa = () => {
 
     const sendDespesa = async () => {
         try {
-            // console.log(despesaToSend);
-            // console.log(JSON.stringify(despesaToSend));
-            const response = await fetch('https://projeto-nestjs-financas.onrender.com/despesas', {
+            const response = await fetch(`${process.env.EXPO_PUBLIC_URL_DEV}/despesas`, {
                 method: "POST",
                 headers: { 'Content-type': 'application/json' },
                 body: JSON.stringify(despesaToSend)
@@ -144,7 +145,7 @@ const TelaDespesa = () => {
                             onValueChange={(itemValue, itemIndex) => setCategoria(itemValue)}
                         >
                             <Picker.Item label="Outros" value="Outros" />
-                            <Picker.Item label="Cartão" value="Cartão" />
+                            <Picker.Item label="Cartões" value="Cartões" />
                             <Picker.Item label="Farmácia" value="Farmácia" />
                             <Picker.Item label="Transporte" value="Transporte" />
                             <Picker.Item label="Mercado" value="Mercado" />
