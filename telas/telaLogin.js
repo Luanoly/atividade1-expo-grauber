@@ -14,6 +14,9 @@ const TelaLogin = () => {
                     <TextInput width={260} label="E-mail" style={{ borderTopEndRadius: 16, borderTopStartRadius: 16, marginBottom: 8 }} ></TextInput>
                     <TextInput width={260} label="Senha" style={{ borderRadius: 16, marginBottom: 20 }} ></TextInput>
                     <Button mode="elevated" buttonColor='#004B57' width={260} onPress={() => navigation.navigate('Home')} textColor='#fff'>Entrar</Button>
+                        <View style={styles.cadastrar}>
+                            <Text style={{ color: '#fff', fontSize: 12 }}>Criar conta</Text>
+                        </View>
                 </View>
             </View>
         </View>
@@ -43,6 +46,12 @@ const styles = StyleSheet.create({
         margin: 8,
         justifyContent: "center",
         alignItems: "center"
+    },
+    cadastrar: {
+        flexDirection: 'row',
+        justifyContent: 'flex-end',
+        padding: 4,
+        alignItems:'center',
     },
     fontePadrao: {
         fontSize: 20,

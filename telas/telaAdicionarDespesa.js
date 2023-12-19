@@ -156,16 +156,16 @@ const TelaDespesa = () => {
                     <Text style={{ fontSize: 24, color: 'white', marginLeft: 6, paddingRight: 8 }}>R$</Text>
                     <TextInput onChangeText={(valor) => setValor(valor)} width={280} placeholder='Inserir valor' style={{ width: 280, borderRadius: 8, backgroundColor: '#fff' }} />
                 </View>
-                <View style={{ flexDirection: 'row', marginTop: 28, justifyContent: 'space-around' }}>
+                {/* <View style={{ flexDirection: 'row', marginTop: 28, justifyContent: 'space-around' }}>
                     <Button mode="outlined" buttonColor='#004B57' onPress={() => console.log('Pressed')} textColor='#fff'>+1</Button>
                     <Button mode="outlined" buttonColor='#004B57' onPress={() => console.log('Pressed')} textColor='#fff'>+10</Button>
                     <Button mode="outlined" buttonColor='#004B57' onPress={() => console.log('Pressed')} textColor='#fff'>+50</Button>
                     <Button mode="outlined" buttonColor='#004B57' onPress={() => console.log('Pressed')} textColor='#fff'>+100</Button>
-                </View>
+                </View> */}
             </View>
 
             <View style={styles.descricao}>
-                <TextInput onChangeText={(text) => despesaToSend.descricao = text} label="Descrição..." style={{ height: 130, borderRadius: 8, backgroundColor: '#fff' }} />
+                <TextInput onChangeText={(text) => despesaToSend.descricao = text} placeholder='Descrição...' style={{ height: 130, borderRadius: 8, backgroundColor: '#fff' }} />
             </View>
 
             <View style={styles.button}>
