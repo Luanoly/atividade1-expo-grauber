@@ -50,7 +50,7 @@ const TelaDespesa = () => {
 
     const sendDespesa = async () => {
         try {
-            const response = await fetch(`${process.env.EXPO_PUBLIC_URL_PROD}/despesas`, {
+            const response = await fetch(`${process.env.EXPO_PUBLIC_URL_DEV}/despesas`, {
                 method: "POST",
                 headers: { 'Content-type': 'application/json' },
                 body: JSON.stringify(despesaToSend)
