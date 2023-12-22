@@ -20,7 +20,7 @@ const TelaDespesa = () => {
     console.log(atualizarLista);
 
 
-    
+
     const despesaToSend = {
         data: valueDate,
         categoria: categoria,
@@ -50,7 +50,7 @@ const TelaDespesa = () => {
 
     const sendDespesa = async () => {
         try {
-            const response = await fetch(`${process.env.EXPO_PUBLIC_URL_DEV}/despesas`, {
+            const response = await fetch(`${process.env.EXPO_PUBLIC_URL_PROD}/despesas`, {
                 method: "POST",
                 headers: { 'Content-type': 'application/json' },
                 body: JSON.stringify(despesaToSend)

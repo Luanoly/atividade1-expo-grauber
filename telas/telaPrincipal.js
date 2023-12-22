@@ -10,7 +10,7 @@ import { useFocusEffect } from '@react-navigation/native';
 const Despesa = ({ categoria, valor }) => {
     return (
         <Pressable onPress={detalhes}>
-            
+
             <View style={styles.registroHistorico}>
                 {/* <Avatar.Icon size={54} color='#004B57' backgroundColor='#A1DCE5' icon="cart-arrow-down" /> */}
                 <Text style={styles.fonteHistorico}>{categoria}   R${valor.toLocaleString("pt-BR", {
@@ -42,15 +42,15 @@ const TelaPrincipal = ({ navigation }) => {
 
     const getDespesas = async () => {
         try {
-            const response = await fetch(`${process.env.EXPO_PUBLIC_URL_DEV}/despesas`);
+            const response = await fetch(`${process.env.EXPO_PUBLIC_URL_PROD}/despesas`);
 
             const json = await response.json();
             console.log(json)
 
-            if(Array.isArray(json) && json.length > 0){
+            if (Array.isArray(json) && json.length > 0) {
                 setDespesas(json);
                 setTotalDespesas(json.reduce((a, b) => a + Number(b.valor), 0));
-            } else{
+            } else {
             }
 
         } catch (error) {
@@ -62,10 +62,10 @@ const TelaPrincipal = ({ navigation }) => {
 
 
 
-  useFocusEffect( () => {
-      getDespesas()
-  }
-  );
+    useFocusEffect(() => {
+        getDespesas()
+    }
+    );
 
 
     useEffect(() => {
