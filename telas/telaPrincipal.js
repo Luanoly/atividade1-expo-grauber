@@ -42,7 +42,7 @@ const TelaPrincipal = ({ navigation }) => {
 
     const getDespesas = async () => {
         try {
-            const response = await fetch(`${process.env.EXPO_PUBLIC_URL_PROD}/despesas`);
+            const response = await fetch(`${process.env.EXPO_PUBLIC_URL_DEV}/despesas`);
 
             const json = await response.json();
             console.log(json)
